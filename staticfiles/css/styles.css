@@ -11420,17 +11420,18 @@ header.masthead {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
+  
   text-align: center;
   color: #fff;
 
   background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
+  background-position: top center;  /* 🔥 Fokus tepada */
+  background-size: contain;           /* Rasmdan tashqariga chiqsa ham to‘ldiradi */
 
-  height: 50vh;   /* ⚡ ekranning yarmi */
+  height: 40vh;
   padding: 2rem 1rem;
 }
+
 
 /* Bannerlar */
 header.masthead.banner1 { background-image: url("../assets/img/00.jpg"); }
@@ -11468,7 +11469,10 @@ header.masthead .btn-xl {
 /* 📱 Telefon (kichik ekranlar) */
 @media (max-width: 767.98px) {
   header.masthead {
-    height: 40vh;  /* mobil ekranda pastroq */
+    height: 50vh; /* kompyuterdagi kabi */
+    background-position: top center;
+    background-size: contain;   /* 👈 telefonda zoom qilmaydi */
+    background-repeat: no-repeat;
   }
   header.masthead .masthead-heading {
     font-size: 1.5rem;
@@ -11482,9 +11486,10 @@ header.masthead .btn-xl {
   }
 }
 
+/* 💻 Planshet va katta ekranlar uchun */
 @media (min-width: 768px) {
   header.masthead {
-    height: 80vh;  /* katta ekranda biroz balandroq */
+    height: 50vh; /* xuddi telefondagidek */
   }
   header.masthead .masthead-subheading {
     font-size: 2rem;
