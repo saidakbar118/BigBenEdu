@@ -11482,7 +11482,6 @@ header.masthead .btn-xl {
   }
 }
 
-/* 💻 Planshet va katta ekranlar uchun */
 @media (min-width: 768px) {
   header.masthead {
     height: 80vh;  /* katta ekranda biroz balandroq */
@@ -11499,6 +11498,7 @@ header.masthead .btn-xl {
     font-size: 1rem;
     padding: 0.8rem 1.5rem;
   }
+}
 
 /* 🖥 Juda katta ekranlar uchun */
 @media (min-width: 1200px) {
@@ -11850,6 +11850,17 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 
 
+/* Team section rasmlari */
+.team-member img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%; /* dumaloq bo‘lsin */
+  margin: 0 auto;
+  display: block;
+}
+
+/* Market section rasmlari */
 .market-img {
   width: 180px;
   height: 180px;
@@ -11857,42 +11868,24 @@ section#contact form#contactForm :-ms-input-placeholder {
   cursor: pointer;
   transition: transform 0.3s ease;
   border-radius: 50%; /* dumaloq rasm */
+  margin: 0 auto;
+  display: block;
 }
 
+/* Hover effekti faqat market uchun */
 .market-img:hover {
   transform: scale(1.05);
 }
 
-.modal-content {
-  background-color: #ffffff !important; /* oq fon */
-  color: #333 !important;              /* qora tekst */
-  border-radius: 15px;
-  padding: 20px;
-  animation: fadeInUp 0.4s ease;
-  max-height: 70vh; /* juda katta text bo'lsa ham */
-  overflow-y: auto; /* scroll chiqadi */
-}
-
-
-.long-text {
-  font-size: 12px;
-  line-height: 1.7;
-  color: #333;
-  text-align: justify;
-  max-height: 250px;   /* juda uzun bo‘lsa */
-  overflow-y: auto;    /* scroll chiqadi */
-  padding-right: 10px; /* scroll textga yopishib qolmasin */
-}
-
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* 📱 Telefonlarda ikkalasi ham kichikroq bo‘lsin */
+@media (max-width: 767.98px) {
+  .team-member img,
+  .market-img {
+    width: 120px;
+    height: 120px;
   }
 }
+
+
+
 
