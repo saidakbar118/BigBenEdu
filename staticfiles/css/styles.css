@@ -11425,10 +11425,9 @@ header.masthead {
   color: #fff;
 
   background-repeat: no-repeat;
-  background-position: top center;  /* 🔥 Fokus tepada */
-  background-size: cover;           /* Rasmdan tashqariga chiqsa ham to‘ldiradi */
+  background-position: center top;  
+  background-size: cover;           /* doim cover ishlatsin */
 
-  height: 80vh;
   padding: 2rem 1rem;
 }
 
@@ -11466,37 +11465,38 @@ header.masthead .btn-xl {
   border-radius: 0.5rem;
 }
 
+
+
 /* 📱 Telefon (kichik ekranlar) */
 @media (max-width: 767.98px) {
   header.masthead {
-    height: 50vh; /* kompyuterdagi kabi */
-    background-position: top center;
-    background-size: contain; 
+    height: 70vh;   /* oldingidan kattaroq qilamiz */
+    background-position: center top;
   }
   header.masthead .masthead-heading {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   header.masthead .masthead-subheading {
     font-size: 1rem;
   }
   header.masthead .btn-xl {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     padding: 0.5rem 1rem;
   }
 }
 
-/* 💻 Planshet va katta ekranlar uchun */
+/* 💻 Planshet va katta ekranlar */
 @media (min-width: 768px) {
   header.masthead {
-    height: 50vh; /* xuddi telefondagidek */
+    height: 80vh;   /* kompyuter uchun optimal */
   }
   header.masthead .masthead-subheading {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
   }
   header.masthead .masthead-heading {
-    font-size: 3.5rem;
-    margin-bottom: 2.5rem;
+    font-size: 3rem;
+    margin-bottom: 2rem;
   }
   header.masthead .btn-xl {
     font-size: 1rem;
@@ -11504,13 +11504,16 @@ header.masthead .btn-xl {
   }
 }
 
-/* 🖥 Juda katta ekranlar uchun */
+/* 🖥 Juda katta ekranlar */
 @media (min-width: 1200px) {
+  header.masthead {
+    height: 90vh;  /* katta monitor uchun deyarli to‘liq ekran */
+  }
   header.masthead .masthead-heading {
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
   header.masthead .masthead-subheading {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
   header.masthead .btn-xl {
     font-size: 1.1rem;
