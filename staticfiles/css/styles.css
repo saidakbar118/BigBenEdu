@@ -11426,7 +11426,7 @@ header.masthead {
 
   background-repeat: no-repeat;
   background-position: top center;  /* 🔥 Fokus tepada */
-  background-size: contain;           /* Rasmdan tashqariga chiqsa ham to‘ldiradi */
+  background-size: cover;           /* Rasmdan tashqariga chiqsa ham to‘ldiradi */
 
   height: 40vh;
   padding: 2rem 1rem;
@@ -11471,6 +11471,7 @@ header.masthead .btn-xl {
   header.masthead {
     height: 50vh; /* kompyuterdagi kabi */
     background-position: top center;
+    background-size: cover; 
   }
   header.masthead .masthead-heading {
     font-size: 1.5rem;
