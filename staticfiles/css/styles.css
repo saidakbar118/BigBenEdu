@@ -11428,7 +11428,7 @@ header.masthead {
   background-position: top center;  /* 🔥 Fokus tepada */
   background-size: cover;           /* Rasmdan tashqariga chiqsa ham to‘ldiradi */
 
-  height: 60vh;
+  height: 80vh;
   padding: 2rem 1rem;
 }
 
@@ -11469,9 +11469,9 @@ header.masthead .btn-xl {
 /* 📱 Telefon (kichik ekranlar) */
 @media (max-width: 767.98px) {
   header.masthead {
-    height: 60vh; /* kompyuterdagi kabi */
+    height: 50vh; /* kompyuterdagi kabi */
     background-position: top center;
-    background-size: cover; 
+    background-size: contain; 
   }
   header.masthead .masthead-heading {
     font-size: 1.5rem;
@@ -11488,7 +11488,7 @@ header.masthead .btn-xl {
 /* 💻 Planshet va katta ekranlar uchun */
 @media (min-width: 768px) {
   header.masthead {
-    height: 60vh; /* xuddi telefondagidek */
+    height: 50vh; /* xuddi telefondagidek */
   }
   header.masthead .masthead-subheading {
     font-size: 2rem;
