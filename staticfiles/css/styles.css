@@ -11471,8 +11471,6 @@ header.masthead .btn-xl {
   header.masthead {
     height: 50vh; /* kompyuterdagi kabi */
     background-position: top center;
-    background-size: contain;   /* 👈 telefonda zoom qilmaydi */
-    background-repeat: no-repeat;
   }
   header.masthead .masthead-heading {
     font-size: 1.5rem;
