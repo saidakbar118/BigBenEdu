@@ -11474,9 +11474,12 @@ section.banner header.masthead .btn-xl {
 /* 📱 Telefon (kichik ekranlar) */
 @media (max-width: 767.98px) {
   section.banner header.masthead {
-    height: 70vh;
-    background-position: center top;
+    height: auto;                /* 🔥 avtomatik balandlik */
+    min-height: 50vh;            /* ekran yarmini kamida egallasin */
+    background-size: cover;      /* rasmni joyiga moslab qilsin */
+    background-position: center; /* rasm markazdan joylashsin */
   }
+
   section.banner header.masthead .masthead-heading { font-size: 1.6rem; }
   section.banner header.masthead .masthead-subheading { font-size: 1rem; }
   section.banner header.masthead .btn-xl {
@@ -11484,6 +11487,7 @@ section.banner header.masthead .btn-xl {
     padding: 0.5rem 1rem;
   }
 }
+
 
 /* 💻 Planshet va katta ekranlar */
 @media (min-width: 768px) {
