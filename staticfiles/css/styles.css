@@ -11410,8 +11410,15 @@ p {
     margin-right: 0;
   }
 }
-header.masthead {
+/* Banner endi alohida section */
+section.banner {
   position: relative;
+  padding-top: 75px;   /* 🔥 header balandligini qoplash uchun */
+  margin-top: 0;       /* endi kerak emas */
+}
+
+/* Banner masthead ichida */
+section.banner header.masthead {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
@@ -11426,32 +11433,31 @@ header.masthead {
 
   background-repeat: no-repeat;
   background-position: center top;  
-  background-size: cover;           /* doim cover ishlatsin */
+  background-size: cover;
 
   padding: 2rem 1rem;
 }
 
-
 /* Bannerlar */
-header.masthead.banner1 { background-image: url("../assets/img/00.jpg"); }
-header.masthead.banner2 { background-image: url("../assets/img/01.jpg"); }
-header.masthead.banner3 { background-image: url("../assets/img/02.jpg"); }
-header.masthead.banner4 { background-image: url("../assets/img/03.jpg"); }
-header.masthead.banner5 { background-image: url("../assets/img/04.jpg"); }
-header.masthead.banner6 { background-image: url("../assets/img/05.jpg"); }
-header.masthead.banner7 { background-image: url("../assets/img/06.jpg"); }
-header.masthead.banner8 { background-image: url("../assets/img/07.jpg"); }
-header.masthead.banner9 { background-image: url("../assets/img/08.jpg"); }
-header.masthead.banner10 { background-image: url("../assets/img/09.jpg"); }
+section.banner header.masthead.banner1 { background-image: url("../assets/img/00.jpg"); }
+section.banner header.masthead.banner2 { background-image: url("../assets/img/01.jpg"); }
+section.banner header.masthead.banner3 { background-image: url("../assets/img/02.jpg"); }
+section.banner header.masthead.banner4 { background-image: url("../assets/img/03.jpg"); }
+section.banner header.masthead.banner5 { background-image: url("../assets/img/04.jpg"); }
+section.banner header.masthead.banner6 { background-image: url("../assets/img/05.jpg"); }
+section.banner header.masthead.banner7 { background-image: url("../assets/img/06.jpg"); }
+section.banner header.masthead.banner8 { background-image: url("../assets/img/07.jpg"); }
+section.banner header.masthead.banner9 { background-image: url("../assets/img/08.jpg"); }
+section.banner header.masthead.banner10 { background-image: url("../assets/img/09.jpg"); }
 
 /* Textlar */
-header.masthead .masthead-subheading {
+section.banner header.masthead .masthead-subheading {
   font-size: 1.2rem;
   font-style: italic;
   margin-bottom: 1rem;
   font-family: "Roboto Slab", Arial, sans-serif;
 }
-header.masthead .masthead-heading {
+section.banner header.masthead .masthead-heading {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -11459,27 +11465,21 @@ header.masthead .masthead-heading {
 }
 
 /* Button */
-header.masthead .btn-xl {
+section.banner header.masthead .btn-xl {
   font-size: 0.9rem;
   padding: 0.6rem 1.2rem;
   border-radius: 0.5rem;
 }
 
-
-
 /* 📱 Telefon (kichik ekranlar) */
 @media (max-width: 767.98px) {
-  header.masthead {
-    height: 70vh;   /* oldingidan kattaroq qilamiz */
+  section.banner header.masthead {
+    height: 70vh;
     background-position: center top;
   }
-  header.masthead .masthead-heading {
-    font-size: 1.6rem;
-  }
-  header.masthead .masthead-subheading {
-    font-size: 1rem;
-  }
-  header.masthead .btn-xl {
+  section.banner header.masthead .masthead-heading { font-size: 1.6rem; }
+  section.banner header.masthead .masthead-subheading { font-size: 1rem; }
+  section.banner header.masthead .btn-xl {
     font-size: 0.85rem;
     padding: 0.5rem 1rem;
   }
@@ -11487,18 +11487,18 @@ header.masthead .btn-xl {
 
 /* 💻 Planshet va katta ekranlar */
 @media (min-width: 768px) {
-  header.masthead {
-    height: 80vh;   /* kompyuter uchun optimal */
+  section.banner header.masthead {
+    height: 80vh;
   }
-  header.masthead .masthead-subheading {
+  section.banner header.masthead .masthead-subheading {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
   }
-  header.masthead .masthead-heading {
+  section.banner header.masthead .masthead-heading {
     font-size: 3rem;
     margin-bottom: 2rem;
   }
-  header.masthead .btn-xl {
+  section.banner header.masthead .btn-xl {
     font-size: 1rem;
     padding: 0.8rem 1.5rem;
   }
@@ -11506,20 +11506,17 @@ header.masthead .btn-xl {
 
 /* 🖥 Juda katta ekranlar */
 @media (min-width: 1200px) {
-  header.masthead {
-    height: 90vh;  /* katta monitor uchun deyarli to‘liq ekran */
+  section.banner header.masthead {
+    height: 90vh;
   }
-  header.masthead .masthead-heading {
-    font-size: 4rem;
-  }
-  header.masthead .masthead-subheading {
-    font-size: 2rem;
-  }
-  header.masthead .btn-xl {
+  section.banner header.masthead .masthead-heading { font-size: 4rem; }
+  section.banner header.masthead .masthead-subheading { font-size: 2rem; }
+  section.banner header.masthead .btn-xl {
     font-size: 1.1rem;
     padding: 1rem 2rem;
   }
 }
+
 #portfolio .portfolio-item {
   max-width: 26rem;
   margin-left: auto;
@@ -11892,6 +11889,84 @@ section#contact form#contactForm :-ms-input-placeholder {
     height: 120px;
   }
 }
+
+
+
+/* Navbar */
+.custom-header {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 10px 0;
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+/* Banner umumiy wrapper */
+.banner-wrapper {
+  margin-top: 0px; /* 🔥 Header balandligi */
+}
+
+/* Banner slide */
+.banner-slide {
+  width: 100%;
+  height: calc(100vh - 90px);   /* 🔥 Header balandligini chiqarib tashlaymiz */
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Banner title */
+.banner-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* 🔘 Tugmalar uchun maxsus */
+.banner-slide .btn-xl {
+  font-size: 0.9rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+/* 📱 Telefon */
+@media (max-width: 767.98px) {
+  .banner-slide { height: 70vh; }
+  .banner-title { font-size: 1.6rem; }
+  .banner-slide .btn-xl {
+    font-size: 0.85rem;
+    padding: 0.5rem 1.2rem;
+  }
+}
+
+/* 💻 Planshet va katta ekran */
+@media (min-width: 768px) {
+  .banner-slide { height: 85vh; }
+  .banner-title { font-size: 3rem; margin-bottom: 25px; }
+  .banner-slide .btn-xl {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+/* 🖥 Juda katta ekran */
+@media (min-width: 1200px) {
+  .banner-slide { height: 90vh; }
+  .banner-title { font-size: 4rem; }
+  .banner-slide .btn-xl {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
+}
+
 
 
 
