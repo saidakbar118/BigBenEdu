@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'modeltranslation',
 ]
 
 MIDDLEWARE = [
@@ -45,6 +46,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -102,9 +104,24 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
+
+from django.utils.translation import gettext_lazy as a 
+
+
+LANGUAGES = [
+    ("ru",a("Russian")),
+    ("en",a("English"))
+]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+
+
+LOCALE_PATHS=BASE_DIR,"locale"
+
+
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'uz-uz'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'Asia/Tashkent'
 

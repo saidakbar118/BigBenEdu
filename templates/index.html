@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,27 +20,67 @@
         <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
     </head>
     <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="#page-top"><img style="width: 55px; height:55px" src="{% static 'assets/img/bigbenlogo.png'%}" alt="..." /></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ms-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">BIZ HAQIMIZDA</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">YO'NALISHLARIMIZ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">HIKOYAMIZ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">BIZNING JAMOA</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#market">MA'LUMOT</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Aloqa</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">SHOP</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#page-top">
+        <img style="width: 55px; height:55px" src="{% static 'assets/img/bigbenlogo.png'%}" alt="..." />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars ms-1"></i>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#services">{% trans "BIZ HAQIMIZDA" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">{% trans "YO'NALISHLARIMIZ" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">{% trans "HIKOYAMIZ" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">{% trans "BIZNING JAMOA" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="#market">{% trans "MA'LUMOT" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">{% trans "Aloqa" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">{% trans "SHOP" %}</a></li>
+        </ul>
+  
+        <!-- 🔥 Til almashtirgich -->
+        <form action="{% url 'set_language' %}" method="post" class="d-flex ms-lg-3">
+            {% csrf_token %}
+            <select name="language" class="language-select" onchange="this.form.submit()">
+              <option value="" disabled selected hidden>Language</option>
+              <option value="ru">ru</option>
+              <option value="en">en</option>
+            </select>
+          </form>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 🔥 CSS -->
+  <style>
+    /* Navbar ichidagi select tugma */
+    .language-select {
+      background-color: #ff9900;   /* Orange */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      min-width: 80px;
+    }
+  
+    .language-select:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(255, 152, 0, 0.8);
+    }
+  
+    .language-select option {
+      background-color: #ffaf01;
+      color: #ffffff;
+    }
+  </style>
+  
         <!-- Masthead-->
        <!-- Banner Section -->
 <section class="banner">
@@ -49,8 +90,8 @@
         <div class="carousel-item active">
           <header class="masthead banner1">
             <div class="container text-center">
-              <div class="masthead-heading text-uppercase">Welcome to Big Ben</div>
-              <a class="btn btn-primary btn-xl text-uppercase" href="#services">BATAFSIL</a>
+              <div class="masthead-heading text-uppercase">{% trans "Welcome to Big Ben" %}</div>
+              <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
             </div>
           </header>
         </div>
@@ -58,8 +99,8 @@
         <div class="carousel-item">
           <header class="masthead banner2">
             <div class="container text-center">
-              <div class="masthead-heading text-uppercase">Welcome to Big Ben</div>
-              <a class="btn btn-primary btn-xl text-uppercase" href="#services">BATAFSIL</a>
+              <div class="masthead-heading text-uppercase">{% trans "Welcome to Big Ben" %}</div>
+              <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
             </div>
           </header>
         </div>
@@ -67,8 +108,8 @@
         <div class="carousel-item">
           <header class="masthead banner4">
             <div class="container text-center">
-              <div class="masthead-heading text-uppercase">Welcome to Big Ben</div>
-              <a class="btn btn-primary btn-xl text-uppercase" href="#services">BATAFSIL</a>
+              <div class="masthead-heading text-uppercase">{% trans "Welcome to Big Ben" %}</div>
+              <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
             </div>
           </header>
         </div>
@@ -76,8 +117,8 @@
         <div class="carousel-item">
           <header class="masthead banner6">
             <div class="container text-center">
-              <div class="masthead-heading text-uppercase">Welcome to Big Ben</div>
-              <a class="btn btn-primary btn-xl text-uppercase" href="#services">BATAFSIL</a>
+              <div class="masthead-heading text-uppercase">{% trans "Welcome to Big Ben" %}</div>
+              <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
             </div>
           </header>
         </div>
@@ -85,8 +126,8 @@
         <div class="carousel-item">
           <header class="masthead banner7">
             <div class="container text-center">
-              <div class="masthead-heading text-uppercase">Welcome to Big Ben</div>
-              <a class="btn btn-primary btn-xl text-uppercase" href="#services">BATAFSIL</a>
+              <div class="masthead-heading text-uppercase">{% trans "Welcome to Big Ben" %}</div>
+              <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
             </div>
           </header>
         </div>
@@ -96,8 +137,8 @@
         <div class="carousel-item">
           <header class="masthead banner9">
             <div class="container text-center">
-              <div class="masthead-heading text-uppercase">Welcome to Big Ben</div>
-              <a class="btn btn-primary btn-xl text-uppercase" href="#services">BATAFSIL</a>
+              <div class="masthead-heading text-uppercase">{% trans "Welcome to Big Ben" %}</div>
+              <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
             </div>
           </header>
         </div>
@@ -105,8 +146,8 @@
         <div class="carousel-item">
           <header class="masthead banner10">
             <div class="container text-center">
-              <div class="masthead-heading text-uppercase">Welcome to Big Ben</div>
-              <a class="btn btn-primary btn-xl text-uppercase" href="#services">BATAFSIL</a>
+              <div class="masthead-heading text-uppercase">{% trans "Welcome to Big Ben" %}</div>
+              <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
             </div>
           </header>
         </div>
@@ -126,9 +167,9 @@
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">BIZ HAQIMIZDA
+                    <h2 class="section-heading text-uppercase">{% trans "BIZ HAQIMIZDA" %}
                     </h2>
-                    <h3 class="section-subheading text-muted">Ta’lim // Mas’uliyat // Mustaqil fikr</h3>
+                    <h3 class="section-subheading text-muted">{% trans "Ta’lim // Mas’uliyat // Mustaqil fikr" %}</h3>
                 </div>
                 <div class="row text-center">
                     <!-- English Section -->
@@ -165,8 +206,8 @@
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2 class="section-heading text-uppercase">YO'NALISHLAR</h2>
-                    <h3 class="section-subheading text-muted">Yo'nalishlar bilan tanishib chiqing</h3>
+                    <h2 class="section-heading text-uppercase">{% trans "YO'NALISHLAR" %}</h2>
+                    <h3 class="section-subheading text-muted">{% trans "Yo'nalishlar bilan tanishib chiqing" %}</h3>
                 </div>
                 <div class="row">
                     <!-- Portfolio item 1 -->
@@ -286,8 +327,8 @@
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">HIKOYAMIZ</h2>
-                    <h3 class="section-subheading text-muted">Biz haqimizda ko'proq bilib oling.</h3>
+                    <h2 class="section-heading text-uppercase">{% trans "HIKOYAMIZ" %}</h2>
+                    <h3 class="section-subheading text-muted">{% trans "Biz haqimizda ko'proq bilib oling." %}</h3>
                 </div>
                 <ul class="timeline">
                     <li>
@@ -329,11 +370,11 @@
                     <li class="timeline-inverted">
                         <div class="timeline-image">
                             <h4>
-                                Be Part
+                                {% trans "Be Part" %}
                                 <br />
-                                Of Our
+                                {% trans "Of Our" %}
                                 <br />
-                                Story!
+                                {% trans "Story!" %}
                             </h4>
                         </div>
                     </li>
@@ -344,16 +385,16 @@
         <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Big Ben team family
+                    <h2 class="section-heading text-uppercase">{% trans "Big Ben team family" %}
                     </h2>
-                    <h3 class="section-subheading text-muted">Bizning jamoa - Bizning oila.</h3>
+                    <h3 class="section-subheading text-muted">{% trans "Bizning jamoa - Bizning oila." %}</h3>
                 </div>
                 <div class="row mb-5">
                     <div class="col-lg-12 text-center">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/1.jpg'%}" alt="..." />
-                            <h4>Hurulbaev Sarvar</h4>
-                            <p class="text-muted">Head Teacher, Language Instructor</p>
+                            <h4>{% trans "Hurulbaev Sarvar" %}</h4>
+                            <p class="text-muted">{% trans "Head Teacher, Language Instructor" %}</p>
                             <a class="btn btn-dark btn-social mx-2" href="https://t.me/s_hurulbaev"><i class="fab fa-telegram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/share/164MtvofUo/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/sarvarhurulbaev"><i class="fab fa-linkedin-in"></i></a>
@@ -365,8 +406,8 @@
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/2.jpg'%}" alt="..." />
-                            <h4>Zuhra</h4>
-                            <p class="text-muted">English language instructor</p>
+                            <h4>{% trans "Zuhra" %}</h4>
+                            <p class="text-muted">{% trans "English language instructor" %}</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-telegram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -375,8 +416,8 @@
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/Akbarova.jpg'%}" alt="..." />
-                            <h4>Akbarova</h4>
-                            <p class="text-muted">English language instructor</p>
+                            <h4>{% trans "Akbarova" %}</h4>
+                            <p class="text-muted">{% trans "English language instructor" %}</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-telegram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -385,8 +426,8 @@
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/ganijonova.jpg'%}" alt="..." />
-                            <h4>G'anijonova</h4>
-                            <p class="text-muted">English language instructor</p>
+                            <h4>{% trans "G'anijonova" %}</h4>
+                            <p class="text-muted">{% trans "English language instructor" %}</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-telegram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -403,8 +444,8 @@
         <section class="page-section bg-light" id="market">
             <div class="container">
               <div class="text-center">
-                <h2 class="section-heading text-uppercase">MA'LUMOT</h2>
-                <h3 class="section-subheading text-muted">Biz haqimizda yana biroz</h3>
+                <h2 class="section-heading text-uppercase">{% trans "MA'LUMOT" %}</h2>
+                <h3 class="section-subheading text-muted">{% trans "Biz haqimizda yana biroz" %}</h3>
               </div>
               <div class="row">
           
@@ -416,7 +457,7 @@
                          class="rounded-circle market-img" 
                          data-bs-toggle="modal" 
                          data-bs-target="#marketModal1" />
-                    <h5 class="mt-2">The Story of Sava Hurulbaev</h5>
+                    <h5 class="mt-2">{% trans "The Story of Sava Hurulbaev" %}</h5>
                   </div>
                 </div>
           
@@ -428,7 +469,7 @@
                          class="rounded-circle market-img" 
                          data-bs-toggle="modal" 
                          data-bs-target="#marketModal2" />
-                    <h5 class="mt-2">I See Myself as a Social Entrepreneur</h5>
+                    <h5 class="mt-2">{% trans "I See Myself as a Social Entrepreneur" %}</h5>
                   </div>
                 </div>
           
@@ -440,7 +481,7 @@
                          class="rounded-circle market-img" 
                          data-bs-toggle="modal" 
                          data-bs-target="#marketModal3" />
-                    <h5 class="mt-2">Laying the Foundations: Big Ben Education Hub</h5>
+                    <h5 class="mt-2">{% trans "Laying the Foundations: Big Ben Education Hub" %}</h5>
                   </div>
                 </div>
           
@@ -452,7 +493,7 @@
                          class="rounded-circle market-img" 
                          data-bs-toggle="modal" 
                          data-bs-target="#marketModal4" />
-                    <h5 class="mt-2">Scaling Impact: EU Project in Fergana Valley</h5>
+                    <h5 class="mt-2">{% trans "Scaling Impact: EU Project in Fergana Valley" %}</h5>
                   </div>
                 </div>
 
@@ -463,7 +504,7 @@
                            class="rounded-circle market-img" 
                            data-bs-toggle="modal" 
                            data-bs-target="#marketModal5" />
-                      <h5 class="mt-2">Learning and Bringing Back: From Andijan to Austin</h5>
+                      <h5 class="mt-2">{% trans "Learning and Bringing Back: From Andijan to Austin" %}</h5>
                     </div>
                 </div>
             
@@ -475,7 +516,7 @@
                            class="rounded-circle market-img" 
                            data-bs-toggle="modal" 
                            data-bs-target="#marketModal6" />
-                      <h5 class="mt-2">Chevening Scholar: From London to Local Action</h5>
+                      <h5 class="mt-2">{% trans "Chevening Scholar: From London to Local Action" %}</h5>
                     </div>
                 </div>
             
@@ -487,7 +528,7 @@
                            class="rounded-circle market-img" 
                            data-bs-toggle="modal" 
                            data-bs-target="#marketModal7" />
-                      <h5 class="mt-2">Andijan Business Leaders Program: Multiplying Change</h5>
+                      <h5 class="mt-2">{% trans "Andijan Business Leaders Program: Multiplying Change" %}</h5>
                     </div>
                 </div>
             
@@ -499,7 +540,7 @@
                            class="rounded-circle market-img" 
                            data-bs-toggle="modal" 
                            data-bs-target="#marketModal8" />
-                      <h5 class="mt-2">My Philosophy: Change Takes Steps</h5>
+                      <h5 class="mt-2">{% trans "My Philosophy: Change Takes Steps" %}</h5>
                     </div>
                 </div>
                 
@@ -513,12 +554,14 @@
           <div class="modal fade" id="marketModal1" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content p-4">
-                <h4 class="text-center">The Story of Sava Hurulbaev</h4>
+                <h4 class="text-center">{% trans "The Story of Sava Hurulbaev" %}</h4>
                 <p class="long-text">
+                    {% blocktrans %}
                     A Social Entrepreneur Bridging Global Experience with Local Change
+                    {% endblocktrans %}
                 </p>
                 <div class="text-center">
-                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Yopish</button>
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
                 </div>
               </div>
             </div>
@@ -528,17 +571,19 @@
           <div class="modal fade" id="marketModal2" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content p-4">
-                <h4 class="text-center">I See Myself as a Social Entrepreneur</h4>
+                <h4 class="text-center">{% trans "I See Myself as a Social Entrepreneur" %}</h4>
                 <p class="long-text">
+                    {% blocktrans %}
                     My mission has always been to fill the gaps my community faces day to day — gaps in education, in
                     leadership, in opportunity. Where some see problems, I see possibilities. Entrepreneurs are best
                     positioned to solve community challenges because they are trained to recognize problems not as
                     obstacles, but as opportunities for innovation. Once equipped with the right knowledge and global
                     perspective, they can bring the world back into their communities — inspiring, motivating, and
                     driving real change.
+                    {% endblocktrans %}
                 </p>
                 <div class="text-center">
-                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Yopish</button>
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
                 </div>
               </div>
             </div>
@@ -548,16 +593,18 @@
           <div class="modal fade" id="marketModal3" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content p-4">
-                <h4 class="text-center">Laying the Foundations: Big Ben Education Hub</h4>
+                <h4 class="text-center">{% trans "Laying the Foundations: Big Ben Education Hub" %}</h4>
                 <p class="long-text">
+                    {% blocktrans %}
                     In 2020, I established Big Ben Education Hub with a bold vision: to give young people access to
                     quality education and the confidence to participate in shaping their futures. Despite the challenges
                     of the time, within the very first year we welcomed over 400 students. This success demonstrated
                     not only the demand for such a space, but also the power of education as a springboard for
                     transformation.
+                    {% endblocktrans %}
                 </p class="long-text">
                 <div class="text-center">
-                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Yopish</button>
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
                 </div>
               </div>
             </div>
@@ -567,17 +614,19 @@
           <div class="modal fade" id="marketModal4" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content p-4">
-                <h4 class="text-center">Scaling Impact: EU Project in Fergana Valley</h4>
+                <h4 class="text-center">{% trans "Scaling Impact: EU Project in Fergana Valley "%}</h4>
                 <p class="long-text">
+                    {% blocktrans %}
                     Soon after, I was invited to serve as Project Manager for one of the largest EU-funded initiatives in
                     Uzbekistan’s Fergana Valley. With a budget of €329,000, my role was to design and deliver 12
                     youth-led mini-projects across Andijan, Asaka, and seven neighborhoods. For two years, I worked
                     closely with young leaders, training them to engage in local decision-making and ensuring their
                     voices were heard. Watching these young people grow into active changemakers convinced me
                     that empowered communities are built by empowered individuals.
+                    {% endblocktrans %}
                 </p>
                 <div class="text-center">
-                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Yopish</button>
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
                 </div>
               </div>
             </div>
@@ -586,8 +635,9 @@
           <div class="modal fade" id="marketModal5" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content p-4">
-                <h4 class="text-center">Learning and Bringing Back: From Andijan to Austin</h4>
+                <h4 class="text-center">{% trans "Learning and Bringing Back: From Andijan to Austin" %}</h4>
                 <p class="long-text">
+                    {% blocktrans %}
                     In 2022, I was selected for the Uzbekistan Business Leaders (UBL) Program, funded by the
                     American Councils. Out of 300 applicants, I was chosen as one of the finalists. This fellowship took
                     me to Austin, Texas, where I immersed myself in entrepreneurial sessions at the University of
@@ -596,9 +646,10 @@
                     Together with local universities, we created a platform where business leaders shared real-life
                     cases with students, while identifying and nurturing new talent. This became a powerful bridge
                     between education and entrepreneurship.
+                    {% endblocktrans %}
                 </p>
                 <div class="text-center">
-                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Yopish</button>
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
                 </div>
               </div>
             </div>
@@ -608,8 +659,9 @@
           <div class="modal fade" id="marketModal6" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content p-4">
-                <h4 class="text-center">Chevening Scholar: From London to Local Action</h4>
+                <h4 class="text-center">{% trans "Chevening Scholar: From London to Local Action" %}</h4>
                 <p class="long-text">
+                    {% blocktrans %}
                     In 2023, I was awarded the Chevening Scholarship — one of the most prestigious UK Government
                     awards. Only 1–2% of all applicants worldwide succeed, and I was honored to be among them.
                     Through Chevening, I completed my Master’s in Entrepreneurship, Innovation, and Enterprise
@@ -618,10 +670,11 @@
                     more than a learning center. It is now a hybrid ecosystem: - A coworking space for entrepreneurs 
                     A training hub for English teachers to grow skills and income - A networking zone for students and
                     business leaders to connect, collaborate, and create opportunities together This reflects my
-                    philosophy: education and entrepreneurship together are the engines of social chan
+                    philosophy: education and entrepreneurship together are the engines of social change.
+                    {% endblocktrans %}
                 </p>
                 <div class="text-center">
-                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Yopish</button>
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
                 </div>
               </div>
             </div>
@@ -631,8 +684,9 @@
           <div class="modal fade" id="marketModal7" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content p-4">
-                <h4 class="text-center"> Andijan Business Leaders Program: Multiplying Change</h4>
+                <h4 class="text-center"> {% trans "Andijan Business Leaders Program: Multiplying Change" %}</h4>
                 <p class="long-text">
+                    {% blocktrans %}
                     Inspired by my U.S. experience, I launched the Andijan Business Leaders Program. Unlike
                     programs that target students alone, this initiative empowers young entrepreneurs who each
                     employ 40+ people across industries such as pharmaceuticals, textiles, IT, hospitality, education,
@@ -642,9 +696,10 @@
                     communities. - In 2026, I will take 10 outstanding entrepreneurs to the United States, connecting
                     Andijan’s leaders with global markets and networks. This multiplies their ability to improve
                     industries, generate jobs, and solve pressing community challenges.
+                    {% endblocktrans %}
                 </p class="long-text">
                 <div class="text-center">
-                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Yopish</button>
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
                 </div>
               </div>
             </div>
@@ -654,8 +709,9 @@
           <div class="modal fade" id="marketModal8" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content p-4">
-                <h4 class="text-center"> My Philosophy: Change Takes Steps</h4>
+                <h4 class="text-center">{% trans "My Philosophy: Change Takes Steps" %}</h4>
                 <p class="long-text">
+                    {% blocktrans %}
                     Real change does not happen overnight. It requires influence, impact, and persistence. 1. Influence
                     minds with education and exposure. 2. Affect systems through leadership and collaboration. 3.
                     Create impact that transforms communities and industries. Every project I lead — in education,
@@ -665,9 +721,10 @@
                     its entrepreneurs — educated, globally aware, and locally committed. They are the ones who will
                     see every problem as an opportunity and transform challenges into stepping stones toward
                     progress.
+                    {% endblocktrans %}
                 </p>
                 <div class="text-center">
-                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Yopish</button>
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
                 </div>
               </div>
             </div>
@@ -677,8 +734,8 @@
         <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Biz bilan bog'laning</h2>
-                    <h3 class="section-subheading text-muted">Aloqaga chiqing va BigBen a'zosiga aylaning</h3>
+                    <h2 class="section-heading text-uppercase">{% trans "Biz bilan bog'laning" %}</h2>
+                    <h3 class="section-subheading text-muted">{% trans "Aloqaga chiqing va BigBen a'zosiga aylaning" %}</h3>
                 </div>
                 <!-- * * * * * * * * * * * * * * *-->
                 <!-- * * SB Forms Contact Form * *-->

@@ -1,0 +1,402 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-19 11:40+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\templates\index.html:33 .\templates\index.html:130
+msgid "BIZ HAQIMIZDA"
+msgstr "О НАС"
+
+#: .\templates\index.html:34
+msgid "YO'NALISHLARIMIZ"
+msgstr "НАПРАВЛЕНИЯ"
+
+#: .\templates\index.html:35 .\templates\index.html:290
+msgid "HIKOYAMIZ"
+msgstr "НАША ИСТОРИЯ"
+
+#: .\templates\index.html:36
+msgid "BIZNING JAMOA"
+msgstr "НАША КОМАНДА"
+
+#: .\templates\index.html:37 .\templates\index.html:407
+msgid "MA'LUMOT"
+msgstr "ИНФОРМАЦИЯ"
+
+#: .\templates\index.html:38
+msgid "Aloqa"
+msgstr "КОНТАКТЫ"
+
+#: .\templates\index.html:39
+msgid "SHOP"
+msgstr "МАГАЗИН"
+
+#: .\templates\index.html:53 .\templates\index.html:62
+#: .\templates\index.html:71 .\templates\index.html:80
+#: .\templates\index.html:89 .\templates\index.html:100
+#: .\templates\index.html:109
+msgid "Welcome to Big Ben"
+msgstr "BigBen ждёт вас"
+
+#: .\templates\index.html:54 .\templates\index.html:63
+#: .\templates\index.html:72 .\templates\index.html:81
+#: .\templates\index.html:90 .\templates\index.html:101
+#: .\templates\index.html:110
+msgid "BATAFSIL"
+msgstr "Подробнее"
+
+#: .\templates\index.html:132
+msgid "Ta’lim // Mas’uliyat // Mustaqil fikr"
+msgstr "Обучение // Ответственность // Самостоятельное мышление"
+
+#: .\templates\index.html:169
+msgid "YO'NALISHLAR"
+msgstr "НАПРАВЛЕНИЯ"
+
+#: .\templates\index.html:170
+msgid "Yo'nalishlar bilan tanishib chiqing"
+msgstr "Ознакомьтесь с направлениями"
+
+#: .\templates\index.html:291
+msgid "Biz haqimizda ko'proq bilib oling."
+msgstr "Узнайте о нас больше."
+
+#: .\templates\index.html:333
+msgid "Be Part"
+msgstr "Станьте"
+
+#: .\templates\index.html:335
+msgid "Of Our"
+msgstr "Частью"
+
+#: .\templates\index.html:337
+msgid "Story!"
+msgstr "Истории!"
+
+#: .\templates\index.html:348
+msgid "Big Ben team family"
+msgstr "Семья BigBen"
+
+#: .\templates\index.html:350
+msgid "Bizning jamoa - Bizning oila."
+msgstr "Наша команда — наша семья."
+
+#: .\templates\index.html:356
+msgid "Hurulbaev Sarvar"
+msgstr "Хурулбаев Сарвар"
+
+#: .\templates\index.html:357
+msgid "Head Teacher, Language Instructor"
+msgstr "Старший преподаватель, преподаватель языка"
+
+#: .\templates\index.html:369
+msgid "Zuhra"
+msgstr "Зухра"
+
+#: .\templates\index.html:370 .\templates\index.html:380
+#: .\templates\index.html:390
+msgid "English language instructor"
+msgstr "Преподаватель английского языка"
+
+#: .\templates\index.html:379
+msgid "Akbarova"
+msgstr "Хадиджа Акбарова"
+
+#: .\templates\index.html:389
+msgid "G'anijonova"
+msgstr "Мехридил Ганижонова"
+
+#: .\templates\index.html:408
+msgid "Biz haqimizda yana biroz"
+msgstr "Немного о нас"
+
+#: .\templates\index.html:420 .\templates\index.html:517
+msgid "The Story of Sava Hurulbaev"
+msgstr "История Савы Хурулбаева"
+
+#: .\templates\index.html:432 .\templates\index.html:534
+msgid "I See Myself as a Social Entrepreneur"
+msgstr "Я вижу себя социальным предпринимателем"
+
+#: .\templates\index.html:444 .\templates\index.html:556
+msgid "Laying the Foundations: Big Ben Education Hub"
+msgstr "Закладывая фундамент: образовательный центр Big Ben"
+
+#: .\templates\index.html:456
+msgid "Scaling Impact: EU Project in Fergana Valley"
+msgstr "Масштабирование воздействия: проект ЕС в Ферганской долине"
+
+#: .\templates\index.html:467 .\templates\index.html:598
+msgid "Learning and Bringing Back: From Andijan to Austin"
+msgstr "Обучение и возвращение: от Андижана до Остина"
+
+#: .\templates\index.html:479 .\templates\index.html:622
+msgid "Chevening Scholar: From London to Local Action"
+msgstr "Chevening Scholar: от Лондона к местным действиям"
+
+#: .\templates\index.html:491 .\templates\index.html:647
+msgid "Andijan Business Leaders Program: Multiplying Change"
+msgstr "Программа «Андижанские бизнес-лидеры»: умножение изменений"
+
+#: .\templates\index.html:503 .\templates\index.html:672
+msgid "My Philosophy: Change Takes Steps"
+msgstr "Моя философия: перемены требуют шагов"
+
+#: .\templates\index.html:519
+#, fuzzy
+#| msgid "A Social Entrepreneur Bridging Global Experience with Local Change"
+msgid ""
+"\n"
+"                    A Social Entrepreneur Bridging Global Experience with "
+"Local Change\n"
+"                    "
+msgstr ""
+"\n"
+"Социальный предприниматель, объединяющий глобальный опыт с локальными "
+"изменениями"
+
+#: .\templates\index.html:524 .\templates\index.html:546
+#: .\templates\index.html:567 .\templates\index.html:589
+#: .\templates\index.html:612 .\templates\index.html:637
+#: .\templates\index.html:662 .\templates\index.html:687
+msgid "Yopish"
+msgstr "Закрыть"
+
+#: .\templates\index.html:536
+msgid ""
+"\n"
+"                    My mission has always been to fill the gaps my community "
+"faces day to day — gaps in education, in\n"
+"                    leadership, in opportunity. Where some see problems, I "
+"see possibilities. Entrepreneurs are best\n"
+"                    positioned to solve community challenges because they "
+"are trained to recognize problems not as\n"
+"                    obstacles, but as opportunities for innovation. Once "
+"equipped with the right knowledge and global\n"
+"                    perspective, they can bring the world back into their "
+"communities — inspiring, motivating, and\n"
+"                    driving real change.\n"
+"                    "
+msgstr ""
+"\n"
+"Моя миссия всегда заключалась в том, чтобы восполнять пробелы, с которыми "
+"ежедневно сталкивается моё сообщество — пробелы в образовании, в лидерстве, "
+"в возможностях. Там, где одни видят проблемы, я вижу возможности. Именно "
+"предприниматели лучше всего способны решать вызовы общества, ведь они "
+"привыкли воспринимать трудности не как препятствия, а как возможности для "
+"инноваций. Получив необходимые знания и глобальное видение, они могут возвращать "
+"опыт в свои сообщества — вдохновляя, мотивируя и создавая реальные перемены."
+
+#: .\templates\index.html:558
+msgid ""
+"\n"
+"                    In 2020, I established Big Ben Education Hub with a bold "
+"vision: to give young people access to\n"
+"                    quality education and the confidence to participate in "
+"shaping their futures. Despite the challenges\n"
+"                    of the time, within the very first year we welcomed over "
+"400 students. This success demonstrated\n"
+"                    not only the demand for such a space, but also the power "
+"of education as a springboard for\n"
+"                    transformation.\n"
+"                    "
+msgstr ""
+"\n"
+"В 2020 году я основал Big Ben Education Hub с амбициозной целью: дать молодым "
+"людям доступ к качественному образованию и уверенность в том, что они могут "
+"участвовать в формировании своего будущего. Несмотря на трудности того времени, "
+"уже в первый год мы приняли более 400 студентов. Этот успех показал не только "
+"высокий спрос на подобное пространство, но и силу образования как трамплина "
+"для преобразований."
+
+#: .\templates\index.html:577
+msgid ""
+"\n"
+"                    Soon after, I was invited to serve as Project Manager "
+"for one of the largest EU-funded initiatives in\n"
+"                    Uzbekistan’s Fergana Valley. With a budget of €329,000, "
+"my role was to design and deliver 12\n"
+"                    youth-led mini-projects across Andijan, Asaka, and seven "
+"neighborhoods. For two years, I worked\n"
+"                    closely with young leaders, training them to engage in "
+"local decision-making and ensuring their\n"
+"                    voices were heard. Watching these young people grow into "
+"active changemakers convinced me\n"
+"                    that empowered communities are built by empowered "
+"individuals.\n"
+"                    "
+msgstr ""
+"\n"
+"Вскоре после этого меня пригласили на должность руководителя проекта в рамках "
+"одной из крупнейших инициатив, финансируемых ЕС, в Ферганской долине Узбекистана. "
+"Бюджет проекта составлял 329 000 евро. Моя задача заключалась в разработке и "
+"реализации 12 мини-проектов, реализуемых под руководством молодёжи, в Андижане, "
+"Асаке и семи районах. В течение двух лет я тесно сотрудничал с молодыми лидерами, "
+"обучая их участию в принятии решений на местном уровне и добиваясь того, чтобы их "
+"голоса были услышаны. Наблюдая за тем, как эти молодые люди превращаются в активных "
+"деятелей перемен, я убедился, что сильные сообщества создаются сильными людьми."
+
+#: .\templates\index.html:600
+msgid ""
+"\n"
+"                    In 2022, I was selected for the Uzbekistan Business "
+"Leaders (UBL) Program, funded by the\n"
+"                    American Councils. Out of 300 applicants, I was chosen "
+"as one of the finalists. This fellowship took\n"
+"                    me to Austin, Texas, where I immersed myself in "
+"entrepreneurial sessions at the University of\n"
+"                    Texas. I saw firsthand how American entrepreneurs "
+"innovate, collaborate, and solve problems at\n"
+"                    scale. Upon returning, I launched the Andijan Business "
+"Club, gathering over 60 entrepreneurs.\n"
+"                    Together with local universities, we created a platform "
+"where business leaders shared real-life\n"
+"                    cases with students, while identifying and nurturing new "
+"talent. This became a powerful bridge\n"
+"                    between education and entrepreneurship.\n"
+"                    "
+msgstr ""
+"\n"
+"В 2022 году меня отобрали для участия в программе «Бизнес-лидеры Узбекистана» "
+"(UBL), финансируемой Американскими советами. Из 300 претендентов я вошёл в число "
+"финалистов. Эта стипендия привела меня в Остин, штат Техас, где я погрузился в "
+"предпринимательские занятия в Техасском университете. Я своими глазами увидел, "
+"как американские предприниматели внедряют инновации, сотрудничают и решают "
+"проблемы в масштабах. Вернувшись, я основал Андижанский бизнес-клуб, объединивший "
+"более 60 предпринимателей. Совместно с местными университетами мы создали платформу, "
+"где бизнес-лидеры делились реальными примерами со студентами, выявляя и развивая "
+"новые таланты. Это стало мощным связующим звеном между образованием и "
+"предпринимательством."
+
+#: .\templates\index.html:624
+
+msgid ""
+"\n"
+"                    In 2023, I was awarded the Chevening Scholarship — one "
+"of the most prestigious UK Government\n"
+"                    awards. Only 1–2% of all applicants worldwide succeed, "
+"and I was honored to be among them.\n"
+"                    Through Chevening, I completed my Master’s in "
+"Entrepreneurship, Innovation, and Enterprise\n"
+"                    Development in London (2023–2024). But my ambition was "
+"never just to study — I wanted to act.\n"
+"                    Returning to Uzbekistan, I opened the second branch of "
+"Big Ben Education Hub, which became\n"
+"                    more than a learning center. It is now a hybrid "
+"ecosystem: - A coworking space for entrepreneurs \n"
+"                    A training hub for English teachers to grow skills and "
+"income - A networking zone for students and\n"
+"                    business leaders to connect, collaborate, and create "
+"opportunities together This reflects my\n"
+"                    philosophy: education and entrepreneurship together are "
+"the engines of social change.\n"
+"                    "
+msgstr ""
+"\n"
+"В 2023 году мне была присуждена стипендия Chevening — одна из самых престижных "
+"наград правительства Великобритании. Только 1–2% всех претендентов по всему миру "
+"получают стипендию, и мне выпала честь оказаться в их числе. Благодаря Chevening я "
+"получил степень магистра предпринимательства, инноваций и развития предприятий в "
+"Лондоне (2023–2024). Но моей целью было не просто учиться — я хотел действовать. "
+"Вернувшись в Узбекистан, я открыл второй филиал Big Ben Education Hub, который "
+"стал больше, чем просто учебным центром. Теперь это гибридная экосистема: — коворкинг "
+"для предпринимателей; учебный центр для преподавателей английского языка, где они "
+"могут развивать навыки и увеличивать доход; — зона нетворкинга для студентов и "
+"бизнес-лидеров, где можно общаться, сотрудничать и совместно создавать возможности. "
+"Это отражает мою философию: образование и предпринимательство вместе являются "
+"двигателями социальных изменений."
+
+#: .\templates\index.html:649
+msgid ""
+"\n"
+"                    Inspired by my U.S. experience, I launched the Andijan "
+"Business Leaders Program. Unlike\n"
+"                    programs that target students alone, this initiative "
+"empowers young entrepreneurs who each\n"
+"                    employ 40+ people across industries such as "
+"pharmaceuticals, textiles, IT, hospitality, education,\n"
+"                    furniture, and real estate. - In 2024 and 2025, I led 20 "
+"entrepreneurs on 10-day leadership journeys\n"
+"                    in London. These were not just trips — they were "
+"accelerators. Participants returned with global\n"
+"                    best practices, stronger networks, and fresh strategies "
+"to apply in their businesses and\n"
+"                    communities. - In 2026, I will take 10 outstanding "
+"entrepreneurs to the United States, connecting\n"
+"                    Andijan’s leaders with global markets and networks. This "
+"multiplies their ability to improve\n"
+"                    industries, generate jobs, and solve pressing community "
+"challenges.\n"
+"                    "
+msgstr ""
+"\n"
+"Вдохновлённый своим опытом в США, я запустил программу «Андижанские бизнес-лидеры». "
+"В отличие от программ, ориентированных только на студентов, эта инициатива расширяет "
+"возможности молодых предпринимателей, каждый из которых нанимает более 40 человек в "
+"сферах фармацевтики, текстиля, IT, гостиничного бизнеса, образования, мебельной "
+"промышленности и недвижимости. — В 2024 и 2025 годах я провёл 20 предпринимателей в "
+"10-дневные лидерские поездки в Лондон. Это были не просто поездки — это были акселераторы. "
+"Участники вернулись с глобальными лучшими практиками, расширенными связями и новыми "
+"стратегиями для применения в своём бизнесе и сообществах. — В 2026 году я планирую "
+"отправить 10 выдающихся предпринимателей в Соединённые Штаты, чтобы подключить лидеров "
+"Андижана к глобальным рынкам и сетям. Это умножит их возможности по улучшению отраслей, "
+"созданию рабочих мест и решению насущных проблем сообщества."
+
+#: .\templates\index.html:674
+msgid ""
+"\n"
+"                    Real change does not happen overnight. It requires "
+"influence, impact, and persistence. 1. Influence\n"
+"                    minds with education and exposure. 2. Affect systems "
+"through leadership and collaboration. 3.\n"
+"                    Create impact that transforms communities and "
+"industries. Every project I lead — in education,\n"
+"                    entrepreneurship, or leadership development — follows "
+"this process. By educating and\n"
+"                    empowering entrepreneurs, I am building the capacity of "
+"those who can solve the most pressing\n"
+"                    challenges our communities face. I believe the future of "
+"Andijan, and Uzbekistan as a whole, lies in\n"
+"                    its entrepreneurs — educated, globally aware, and "
+"locally committed. They are the ones who will\n"
+"                    see every problem as an opportunity and transform "
+"challenges into stepping stones toward\n"
+"                    progress.\n"
+"                    "
+msgstr ""
+"\n"
+"Настоящие изменения не происходят в одночасье. Они требуют влияния, воздействия "
+"и настойчивости. 1. Влиять на умы через образование и знакомство с миром. 2. "
+"Влиять на системы через лидерство и сотрудничество. 3. Создавать воздействие, "
+"которое преобразует сообщества и отрасли. Каждый проект, который я веду — в "
+"сферах образования, предпринимательства или развития лидерских качеств — "
+"следует этому процессу. Обучая и расширяя возможности предпринимателей, я "
+"повышаю потенциал тех, кто может решить самые насущные проблемы наших сообществ. "
+"Я верю, что будущее Андижана и всего Узбекистана связано с предпринимателями — "
+"образованными, глобально осведомлёнными и преданными своему делу. Именно они будут "
+"видеть в каждой проблеме возможность и превращать вызовы в шаги к прогрессу."
+
+#: .\templates\index.html:697
+msgid "Biz bilan bog'laning"
+msgstr "Связаться с нами"
+
+#: .\templates\index.html:698
+msgid "Aloqaga chiqing va BigBen a'zosiga aylaning"
+msgstr "Свяжитесь с нами и станьте членом BigBen"
