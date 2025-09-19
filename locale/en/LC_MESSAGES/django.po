@@ -115,11 +115,11 @@ msgstr "English language instructor"
 
 #: .\templates\index.html:379
 msgid "Akbarova"
-msgstr "Akbarova"
+msgstr "Hadija Akbarova"
 
 #: .\templates\index.html:389
 msgid "G'anijonova"
-msgstr "G'anijonova"
+msgstr "Mehridil Ganijojova"
 
 #: .\templates\index.html:408
 msgid "Biz haqimizda yana biroz"
@@ -423,4 +423,13 @@ msgstr ""
 "                    minds with education and exposure. 2. Affect systems "
 "through leadership and collaboration. 3.\n"
 "                    Create impact that transforms communities and "
+
+
+#: .\templates\index.html:697
+msgid "Biz bilan bog'laning"
+msgstr "Get in touch"
+
+#: .\templates\index.html:698
+msgid "Aloqaga chiqing va BigBen a'zosiga aylaning"
+msgstr "Contact with us and became member of BigBen"
 

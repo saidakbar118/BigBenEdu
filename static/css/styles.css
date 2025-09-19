@@ -11468,7 +11468,8 @@ header.masthead .btn-xl {
 /* 📱 Telefon (kichik ekranlar) */
 @media (max-width: 767.98px) {
   header.masthead {
-    height: 40vh;  /* mobil ekranda pastroq */
+    height: 40vh; 
+    background-size: contain; 
   }
   header.masthead .masthead-heading {
     font-size: 1.5rem;
