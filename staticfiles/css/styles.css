@@ -11475,12 +11475,13 @@ section.banner header.masthead .btn-xl {
 /* 📱 Telefon (kichik ekranlar) */
 @media (max-width: 767.98px) {
   section.banner {
-    padding-top: 65px;   /* 🔥 Telefon header bilan joy qoldirish */
+    margin-top: 65px;   /* 🔥 Header balandligiga joy qoldir */
+    padding-top: 0;     /* padding kerak emas */
   }
 
   section.banner header.masthead {
-    height: auto;          /* Avtomatik balandlik */
-    min-height: 60vh;      /* Kamida yarim ekran */
+    height: auto;          
+    min-height: calc(100vh - 65px);  /* Ekran balandligi minus header */
     background-position: center;
   }
 
@@ -11497,6 +11498,7 @@ section.banner header.masthead .btn-xl {
     padding: 0.5rem 1rem;
   }
 }
+
 
 /* 💻 Planshet va katta ekranlar */
 @media (min-width: 768px) {
