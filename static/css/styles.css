@@ -11410,8 +11410,15 @@ p {
     margin-right: 0;
   }
 }
-header.masthead {
+/* 🔹 Banner umumiy section */
+section.banner {
   position: relative;
+  padding-top: 65px;   /* Header balandligini qoplash */
+  margin-top: 0;
+}
+
+/* 🔹 Masthead (banner ichida) */
+section.banner header.masthead {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
@@ -11428,38 +11435,38 @@ header.masthead {
   background-position: center top;
   background-size: cover;
 
-  height: 50vh;   /* ⚡ ekranning yarmi */
   padding: 2rem 1rem;
 }
 
-/* Bannerlar */
-header.masthead.banner1 { background-image: url("../assets/img/00.jpg"); }
-header.masthead.banner2 { background-image: url("../assets/img/01.jpg"); }
-header.masthead.banner3 { background-image: url("../assets/img/02.jpg"); }
-header.masthead.banner4 { background-image: url("../assets/img/03.jpg"); }
-header.masthead.banner5 { background-image: url("../assets/img/04.jpg"); }
-header.masthead.banner6 { background-image: url("../assets/img/05.jpg"); }
-header.masthead.banner7 { background-image: url("../assets/img/06.jpg"); }
-header.masthead.banner8 { background-image: url("../assets/img/07.jpg"); }
-header.masthead.banner9 { background-image: url("../assets/img/08.jpg"); }
-header.masthead.banner10 { background-image: url("../assets/img/09.jpg"); }
+/* 🔹 Banner rasmlar */
+section.banner header.masthead.banner1  { background-image: url("../assets/img/00.jpg"); }
+section.banner header.masthead.banner2  { background-image: url("../assets/img/01.jpg"); }
+section.banner header.masthead.banner3  { background-image: url("../assets/img/02.jpg"); }
+section.banner header.masthead.banner4  { background-image: url("../assets/img/03.jpg"); }
+section.banner header.masthead.banner5  { background-image: url("../assets/img/04.jpg"); }
+section.banner header.masthead.banner6  { background-image: url("../assets/img/05.jpg"); }
+section.banner header.masthead.banner7  { background-image: url("../assets/img/06.jpg"); }
+section.banner header.masthead.banner8  { background-image: url("../assets/img/07.jpg"); }
+section.banner header.masthead.banner9  { background-image: url("../assets/img/08.jpg"); }
+section.banner header.masthead.banner10 { background-image: url("../assets/img/09.jpg"); }
 
-/* Textlar */
-header.masthead .masthead-subheading {
+/* 🔹 Textlar */
+section.banner header.masthead .masthead-subheading {
   font-size: 1.2rem;
   font-style: italic;
   margin-bottom: 1rem;
   font-family: "Roboto Slab", Arial, sans-serif;
 }
-header.masthead .masthead-heading {
+
+section.banner header.masthead .masthead-heading {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   font-family: "Montserrat", Arial, sans-serif;
 }
 
-/* Button */
-header.masthead .btn-xl {
+/* 🔹 Button */
+section.banner header.masthead .btn-xl {
   font-size: 0.9rem;
   padding: 0.6rem 1.2rem;
   border-radius: 0.5rem;
@@ -11467,53 +11474,72 @@ header.masthead .btn-xl {
 
 /* 📱 Telefon (kichik ekranlar) */
 @media (max-width: 767.98px) {
-  header.masthead {
-    height: 40vh; 
-    background-size: contain; 
+  section.banner {
+    padding-top: 65px;   /* 🔥 Telefon header bilan joy qoldirish */
   }
-  header.masthead .masthead-heading {
-    font-size: 1.5rem;
+
+  section.banner header.masthead {
+    height: auto;          /* Avtomatik balandlik */
+    min-height: 60vh;      /* Kamida yarim ekran */
+    background-position: center;
   }
-  header.masthead .masthead-subheading {
+
+  section.banner header.masthead .masthead-heading {
+    font-size: 1.6rem;
+  }
+
+  section.banner header.masthead .masthead-subheading {
     font-size: 1rem;
   }
-  header.masthead .btn-xl {
-    font-size: 0.8rem;
+
+  section.banner header.masthead .btn-xl {
+    font-size: 0.85rem;
     padding: 0.5rem 1rem;
   }
 }
 
+/* 💻 Planshet va katta ekranlar */
 @media (min-width: 768px) {
-  header.masthead {
-    height: 80vh;  /* katta ekranda biroz balandroq */
+  section.banner header.masthead {
+    height: 80vh;
   }
-  header.masthead .masthead-subheading {
-    font-size: 2rem;
+
+  section.banner header.masthead .masthead-subheading {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  section.banner header.masthead .masthead-heading {
+    font-size: 3rem;
     margin-bottom: 2rem;
   }
-  header.masthead .masthead-heading {
-    font-size: 3.5rem;
-    margin-bottom: 2.5rem;
-  }
-  header.masthead .btn-xl {
+
+  section.banner header.masthead .btn-xl {
     font-size: 1rem;
     padding: 0.8rem 1.5rem;
   }
 }
 
-/* 🖥 Juda katta ekranlar uchun */
+/* 🖥 Juda katta ekranlar */
 @media (min-width: 1200px) {
-  header.masthead .masthead-heading {
-    font-size: 4.5rem;
+  section.banner header.masthead {
+    height: 90vh;
   }
-  header.masthead .masthead-subheading {
-    font-size: 2.25rem;
+
+  section.banner header.masthead .masthead-heading {
+    font-size: 4rem;
   }
-  header.masthead .btn-xl {
+
+  section.banner header.masthead .masthead-subheading {
+    font-size: 2rem;
+  }
+
+  section.banner header.masthead .btn-xl {
     font-size: 1.1rem;
     padding: 1rem 2rem;
   }
 }
+
 #portfolio .portfolio-item {
   max-width: 26rem;
   margin-left: auto;
