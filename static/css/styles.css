@@ -11367,7 +11367,7 @@ p {
 }
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: #fff;
   letter-spacing: 0.0625em;
 }
@@ -11413,28 +11413,23 @@ p {
 /* 🔹 Banner umumiy section */
 section.banner {
   position: relative;
-  padding-top: 65px;   /* Header balandligini qoplash */
-  margin-top: 0;
+  margin-top: -30px; /* Header balandligi */
+  width: 100%;
 }
 
 /* 🔹 Masthead (banner ichida) */
 section.banner header.masthead {
   width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
   text-align: center;
   color: #fff;
-
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center center;
   background-size: cover;
-
+  background-attachment: scroll;
   padding: 2rem 1rem;
 }
 
@@ -11456,6 +11451,8 @@ section.banner header.masthead .masthead-subheading {
   font-style: italic;
   margin-bottom: 1rem;
   font-family: "Roboto Slab", Arial, sans-serif;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  max-width: 90%;
 }
 
 section.banner header.masthead .masthead-heading {
@@ -11463,6 +11460,8 @@ section.banner header.masthead .masthead-heading {
   font-weight: 700;
   margin-bottom: 1.5rem;
   font-family: "Montserrat", Arial, sans-serif;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  max-width: 90%;
 }
 
 /* 🔹 Button */
@@ -11470,75 +11469,113 @@ section.banner header.masthead .btn-xl {
   font-size: 0.9rem;
   padding: 0.6rem 1.2rem;
   border-radius: 0.5rem;
+  background-color: #ff6b00;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+section.banner header.masthead .btn-xl:hover {
+  background-color: #e55a00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* 📱 Telefon (kichik ekranlar) */
 @media (max-width: 767.98px) {
   section.banner {
-    margin-top: 65px;   /* 🔥 Header balandligiga joy qoldir */
-    padding-top: 0;     /* padding kerak emas */
+      margin-top: 100px;
+      padding-top: 0;
   }
 
   section.banner header.masthead {
-    height: auto;          
-    min-height: calc(100vh - 65px);  /* Ekran balandligi minus header */
-    background-position: center;
+      height: auto;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: contain; /* ✅ Yonlar kesilmasin */
+      background-color: #000;   /* ✅ Qora fon, agar rasm to‘liq joylashmasa */
+      padding: 2rem 1rem;
   }
 
   section.banner header.masthead .masthead-heading {
-    font-size: 1.6rem;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
   }
 
   section.banner header.masthead .masthead-subheading {
-    font-size: 1rem;
+      font-size: 0.95rem;
+      margin-bottom: 1.3rem;
   }
 
   section.banner header.masthead .btn-xl {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      padding: 0.5rem 1rem;
   }
 }
 
 
-/* 💻 Planshet va katta ekranlar */
-@media (min-width: 768px) {
+/* 💻 Planshet va kichik noutbuklar */
+@media (min-width: 768px) and (max-width: 1199.98px) {
   section.banner header.masthead {
-    height: 80vh;
+      height: 70vh;
+      min-height: 500px;
   }
 
   section.banner header.masthead .masthead-subheading {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
   }
 
   section.banner header.masthead .masthead-heading {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
   }
 
   section.banner header.masthead .btn-xl {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+  }
+}
+
+/* 🖥 Katta ekranlar */
+@media (min-width: 1200px) {
+  section.banner header.masthead {
+      height: 85vh;
+      min-height: 600px;
+  }
+
+  section.banner header.masthead .masthead-heading {
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+  }
+
+  section.banner header.masthead .masthead-subheading {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+  }
+
+  section.banner header.masthead .btn-xl {
+      font-size: 1.1rem;
+      padding: 1rem 2rem;
   }
 }
 
 /* 🖥 Juda katta ekranlar */
-@media (min-width: 1200px) {
+@media (min-width: 1600px) {
   section.banner header.masthead {
-    height: 90vh;
+      height: 90vh;
   }
 
   section.banner header.masthead .masthead-heading {
-    font-size: 4rem;
+      font-size: 4rem;
   }
 
   section.banner header.masthead .masthead-subheading {
-    font-size: 2rem;
-  }
-
-  section.banner header.masthead .btn-xl {
-    font-size: 1.1rem;
-    padding: 1rem 2rem;
+      font-size: 2rem;
   }
 }
 
