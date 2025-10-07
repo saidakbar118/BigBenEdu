@@ -11496,9 +11496,9 @@ section.banner header.masthead .btn-xl:hover {
       height: auto;
       background-position: center top;
       background-repeat: no-repeat;
-      background-size: contain; /* ✅ Yonlar kesilmasin */
-      background-color: #000;   /* ✅ Qora fon, agar rasm to‘liq joylashmasa */
-      padding: 2rem 1rem;
+      background-size: contain;
+      background-color: #fff;   
+      padding: 3rem 2rem;
   }
 
   section.banner header.masthead .masthead-heading {
