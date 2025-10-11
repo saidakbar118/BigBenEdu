@@ -11494,11 +11494,14 @@ section.banner header.masthead .btn-xl:hover {
 
   section.banner header.masthead {
       height: auto;
+      /* 🔹 Rasm yonboshlari ochilmasligi uchun */
       background-position: center top;
       background-repeat: no-repeat;
-      background-size: contain;
-      background-color: #fff;
-      padding: 3.5rem 1.5rem 4rem; /* pastga ozgina joy */
+      background-size: cover; /* contain o‘rniga cover */
+      background-color: #000; /* fon bo‘sh joyni to‘ldirsin */
+      padding: 3.5rem 1rem 5rem; /* pastdan joy */
+      width: 100vw;  /* 🔥 to‘liq ekran kengligida */
+      margin: 0;
   }
 
   section.banner header.masthead .masthead-heading {
@@ -11512,13 +11515,14 @@ section.banner header.masthead .btn-xl:hover {
   }
 
   section.banner header.masthead .btn-xl {
-      font-size: 0.65rem;       /* 🔹 endi ancha kichikroq */
-      padding: 0.4rem 0.9rem;   /* 🔹 uzunlik va balandlik mos */
-      margin-top: 0.8rem;       /* 🔹 biroz pastroqda, lekin juda emas */
+      font-size: 0.7rem;       /* 🔹 biroz kichikroq */
+      padding: 0.45rem 1rem;
+      margin-top: 1.4rem;      /* 🔹 textdan pastroqda */
       border-radius: 0.4rem;
-      transform: translateY(6px); /* 🔹 tabiiy “pastroqqa tushgan” effekt */
+      transform: translateY(4px); /* 🔹 tabiiy pastlash effekti */
   }
 }
+
 
 
 
