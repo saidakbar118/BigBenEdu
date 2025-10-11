@@ -11516,7 +11516,7 @@ section.banner header.masthead .btn-xl:hover {
       padding: 0.4rem 0.9rem;   /* 🔹 uzunlik va balandlik mos */
       margin-top: 0.8rem;       /* 🔹 biroz pastroqda, lekin juda emas */
       border-radius: 0.4rem;
-      transform: translateY(3px); /* 🔹 tabiiy “pastroqqa tushgan” effekt */
+      transform: translateY(6px); /* 🔹 tabiiy “pastroqqa tushgan” effekt */
   }
 }
 

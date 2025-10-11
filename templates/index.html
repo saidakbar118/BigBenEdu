@@ -19,6 +19,41 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
     </head>
+    <style>
+        /* 🔹 Modal orqa fonni oynasimon blur qilish */
+        .modal-backdrop.show {
+          background-color: rgba(255, 255, 255, 0.5) !important; /* shaffof oq fon */
+          backdrop-filter: blur(30px) !important; /* oynasimon blur effekt */
+          -webkit-backdrop-filter: blur(30px) !important;
+        }
+        
+        /* 🔹 Modal o‘zi silliq chiqsin */
+        .modal.fade .modal-dialog {
+          transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+          transform: scale(0.9);
+          opacity: 0;
+        }
+        .modal.fade.show .modal-dialog {
+          transform: scale(1);
+          opacity: 1;
+        }
+        
+        /* 🔹 Modal tarkibining orqa fonini o‘chirish */
+        .modal-content {
+          background: transparent;
+          border: none;
+          box-shadow: none;
+        }
+        
+        /* 🔹 Rasmning ko‘rinishi */
+        .modal-img-small {
+          max-width: 80%;
+          height: auto;
+          border-radius: 12px;
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+        }
+        </style>
+         
     <body id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -91,7 +126,6 @@
         <div class="carousel-item active">
           <header class="masthead banner1">
             <div class="container text-center">
-              <div class="masthead-heading text-uppercase">{% trans "Welcome to Big Ben" %}</div>
               <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
             </div>
           </header>
@@ -100,7 +134,6 @@
         <div class="carousel-item">
           <header class="masthead banner2">
             <div class="container text-center">
-              <div class="masthead-heading text-uppercase">{% trans "Welcome to Big Ben" %}</div>
               <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
             </div>
           </header>
@@ -109,7 +142,6 @@
         <div class="carousel-item">
           <header class="masthead banner4">
             <div class="container text-center">
-              <div class="masthead-heading text-uppercase">{% trans "Welcome to Big Ben" %}</div>
               <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
             </div>
           </header>
@@ -118,7 +150,6 @@
         <div class="carousel-item">
           <header class="masthead banner6">
             <div class="container text-center">
-              <div class="masthead-heading text-uppercase">{% trans "Welcome to Big Ben" %}</div>
               <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
             </div>
           </header>
@@ -127,7 +158,6 @@
         <div class="carousel-item">
           <header class="masthead banner7">
             <div class="container text-center">
-              <div class="masthead-heading text-uppercase">{% trans "Welcome to Big Ben" %}</div>
               <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
             </div>
           </header>
@@ -138,7 +168,6 @@
         <div class="carousel-item">
           <header class="masthead banner9">
             <div class="container text-center">
-              <div class="masthead-heading text-uppercase">{% trans "Welcome to Big Ben" %}</div>
               <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
             </div>
           </header>
@@ -147,7 +176,6 @@
         <div class="carousel-item">
           <header class="masthead banner10">
             <div class="container text-center">
-              <div class="masthead-heading text-uppercase">{% trans "Welcome to Big Ben" %}</div>
               <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
             </div>
           </header>
