@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Categories - BigBenEdu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: rgb(103, 90, 90);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: 300px;
+            grid-gap: 20px;
+            grid-auto-flow: dense;
+            margin: 40px 0;
+        }
+
+        .category-item {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .category-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Turli o'lchamdagi rasmlar uchun */
+        .category-item:nth-child(3n) {
+            grid-row: span 2;
+        }
+
+        .category-item:nth-child(5n) {
+            grid-column: span 2;
+        }
+
+        .category-item:nth-child(7n) {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .categories-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .categories-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                grid-auto-rows: 250px;
+            }
+            
+            .category-item:nth-child(5n),
+            .category-item:nth-child(7n) {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 300px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .category-item:nth-child(3n),
+            .category-item:nth-child(5n),
+            .category-item:nth-child(7n) {
+                grid-row: span 1;
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>BigBenEdu Photo Album</h2>
+        </header>
+
+        <div class="categories-grid">
+    
+            <div class="categories-grid">
+                {% for cat in categories %}
+                <div class="category-item" onclick="window.location.href='{% url 'category_detail' cat.id %}'">
+                    <img src="{{ cat.cover_image.url }}" alt="Category {{ cat.id }}" class="category-img">
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+        <footer>
+            <p>NanoSoft &copy; 2025</p>
+        </footer>
+    </div>
+</body>
+</html>

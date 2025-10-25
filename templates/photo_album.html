@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BigBenEdu Photo Album</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: rgb(103, 90, 90);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* --- Masonry layout --- */
+    .photo-gallery {
+      column-count: 4;
+      column-gap: 20px;
+    }
+
+    .gallery-item {
+      margin-bottom: 20px;
+      break-inside: avoid;
+      overflow: hidden;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 1200px) {
+      .photo-gallery { column-count: 3; column-gap: 18px; }
+    }
+
+    @media (max-width: 992px) {
+      .photo-gallery { column-count: 3; column-gap: 15px; }
+      .gallery-item { margin-bottom: 15px; }
+    }
+
+    /* 📱 Mobilda 2 ustun */
+    @media (max-width: 768px) {
+      .photo-gallery { column-count: 2; column-gap: 12px; }
+      .gallery-item { margin-bottom: 12px; border-radius: 12px; }
+      h1 { font-size: 2.2rem; }
+    }
+
+    /* 480px - kichik telefonlar uchun (2 ustun saqlanadi) */
+    @media (max-width: 480px) {
+      .photo-gallery { column-count: 2; column-gap: 8px; }
+      .gallery-item { margin-bottom: 10px; border-radius: 10px; }
+      h1 { font-size: 2rem; }
+    }
+
+    /* 🔹 Juda kichik (360px yoki past) ekranlarda — 3ta ustunli joylashuv */
+    @media (max-width: 360px) {
+      .photo-gallery { column-count: 3; column-gap: 6px; }
+      .gallery-item { margin-bottom: 8px; border-radius: 8px; }
+      .gallery-img { border-radius: 8px; }
+      h1 { font-size: 1.8rem; }
+    }
+
+    /* 🔹 Ultra kichik (320px dan kichik) — ham 3 ustun, lekin siqilgan formatda */
+    @media (max-width: 320px) {
+      .photo-gallery { column-count: 3; column-gap: 4px; }
+      .gallery-item { margin-bottom: 6px; border-radius: 6px; }
+      h1 { font-size: 1.6rem; }
+    }
+
+    /* Loading animation */
+    .gallery-img {
+      opacity: 0;
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h2>BigBenEdu Photo Album</h2>
+    </header>
+
+    <div class="photo-gallery">
+      {% for photo in photos %}
+      <div class="gallery-item">
+        <img 
+          src="{{ photo.image.url }}" 
+          alt="{{ photo.title }}" 
+          class="gallery-img"
+          loading="lazy"
+        >
+      </div>
+      {% empty %}
+      <div style="text-align:center; margin-top:40px;">
+        <p style="font-size: 1.2rem; opacity: 0.8;">Hozircha rasm mavjud emas 📷</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <footer>
+      <p>NanoSoft &copy; 2025</p>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const imgs = document.querySelectorAll('.gallery-img');
+      imgs.forEach(img => {
+        img.addEventListener('load', () => img.classList.add('loaded'));
+      });
+    });
+  </script>
+</body>
+</html>

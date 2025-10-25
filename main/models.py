@@ -28,5 +28,19 @@ class Text(models.Model):
     name3 = models.CharField(max_length=90)
     text3 = models.TextField()
     image3 = models.ImageField()
+    
+    
+class Category(models.Model):
+    cover_image = models.ImageField(upload_to='album/')
 
+    def __str__(self):
+        return f"Category {self.id}"
+
+
+class Photo(models.Model):
+    category = models.ForeignKey(Category, related_name='photos', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='album/')
+
+    def __str__(self):
+        return f"Photo {self.id} (Category {self.category.id})"
 
