@@ -14,8 +14,8 @@
         }
 
         body {
-            background: rgb(103, 90, 90);
-            color: #fff;
+            background: #fff;
+            color: #000;
             min-height: 100vh;
         }
 
@@ -30,7 +30,7 @@
             padding: 30px 0;
         }
 
-        h1 {
+        h2 {
             font-size: 3rem;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -70,6 +70,21 @@
             display: block;
         }
 
+        /* Title overlay */
+        .category-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 20px 15px 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
         /* Turli o'lchamdagi rasmlar uchun */
         .category-item:nth-child(3n) {
             grid-row: span 2;
@@ -99,7 +114,7 @@
         }
 
         @media (max-width: 768px) {
-            h1 {
+            h2 {
                 font-size: 2.2rem;
             }
             
@@ -112,10 +127,15 @@
             .category-item:nth-child(7n) {
                 grid-column: span 1;
             }
+            
+            .category-title {
+                font-size: 1.1rem;
+                padding: 15px 10px 10px;
+            }
         }
 
         @media (max-width: 480px) {
-            h1 {
+            h2 {
                 font-size: 1.8rem;
             }
             
@@ -134,30 +154,29 @@
                 grid-row: span 1;
                 grid-column: span 1;
             }
+            
+            .category-title {
+                font-size: 1rem;
+                padding: 12px 8px 8px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h2>BigBenEdu Photo Album</h2>
+            <h2>BigBenEdu</h2>
         </header>
 
         <div class="categories-grid">
-    
-            <div class="categories-grid">
-                {% for cat in categories %}
-                <div class="category-item" onclick="window.location.href='{% url 'category_detail' cat.id %}'">
-                    <img src="{{ cat.cover_image.url }}" alt="Category {{ cat.id }}" class="category-img">
-                </div>
-                {% endfor %}
+            {% for cat in categories %}
+            <div class="category-item" onclick="window.location.href='{% url 'category_detail' cat.id %}'">
+                <img src="{{ cat.cover_image.url }}" alt="{{ cat.title }}" class="category-img">
+                <div class="category-title">{{ cat.title }}</div>
             </div>
-
+            {% endfor %}
         </div>
 
-        <footer>
-            <p>NanoSoft &copy; 2025</p>
-        </footer>
     </div>
 </body>
 </html>

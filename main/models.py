@@ -31,6 +31,7 @@ class Text(models.Model):
     
     
 class Category(models.Model):
+    title = models.CharField(max_length=100)
     cover_image = models.ImageField(upload_to='album/')
 
     def __str__(self):
