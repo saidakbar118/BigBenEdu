@@ -42,6 +42,11 @@
       column-gap: 20px;
     }
 
+    /* 6tadan kam rasm bo'lsa - bir qator */
+    .photo-gallery.few-images {
+      column-count: 1;
+    }
+
     .gallery-item {
       margin-bottom: 20px;
       break-inside: avoid;
@@ -185,16 +190,19 @@
     /* --- Responsive --- */
     @media (max-width: 1200px) {
       .photo-gallery { column-count: 3; column-gap: 18px; }
+      .photo-gallery.few-images { column-count: 1; }
     }
 
     @media (max-width: 992px) {
       .photo-gallery { column-count: 3; column-gap: 15px; }
+      .photo-gallery.few-images { column-count: 1; }
       .gallery-item { margin-bottom: 15px; }
     }
 
     /* 📱 Mobile - 2 columns */
     @media (max-width: 768px) {
       .photo-gallery { column-count: 2; column-gap: 12px; }
+      .photo-gallery.few-images { column-count: 1; }
       .gallery-item { margin-bottom: 12px; border-radius: 12px; }
       h1 { font-size: 2.2rem; }
       
@@ -219,6 +227,7 @@
     /* 📱 Small phones - 2 columns */
     @media (max-width: 480px) {
       .photo-gallery { column-count: 2; column-gap: 8px; }
+      .photo-gallery.few-images { column-count: 1; }
       .gallery-item { margin-bottom: 10px; border-radius: 10px; }
       h1 { font-size: 2rem; }
       
@@ -238,6 +247,7 @@
     /* 🔹 Very small screens - 3 columns */
     @media (max-width: 360px) {
       .photo-gallery { column-count: 3; column-gap: 6px; }
+      .photo-gallery.few-images { column-count: 1; }
       .gallery-item { margin-bottom: 8px; border-radius: 8px; }
       h1 { font-size: 1.8rem; }
     }
@@ -251,9 +261,9 @@
 </head>
 <body>
   <div class="container">
-  
+    <header>
 
-    <div class="photo-gallery">
+    <div class="photo-gallery" id="photoGallery">
       {% for photo in photos %}
       <div class="gallery-item" onclick="openModal({{ forloop.counter0 }})">
         <img 
@@ -269,6 +279,7 @@
       </div>
       {% endfor %}
     </div>
+
   </div>
 
   <!-- Modal -->
@@ -294,12 +305,23 @@
     let currentImageIndex = 0;
     const images = [];
     
-    // Rasmlarni JavaScript arrayga yig'ish
+    // Rasmlarni JavaScript arrayga yig'ish va layoutni sozlash
     document.addEventListener('DOMContentLoaded', function() {
+      const gallery = document.getElementById('photoGallery');
       const galleryItems = document.querySelectorAll('.gallery-item img');
+      
+      // Rasmlarni arrayga saqlash
       galleryItems.forEach(img => {
         images.push(img.src);
       });
+      
+      // Rasm soniga qarab layoutni sozlash (faqat 6tadan kam bo'lsa)
+      const imageCount = images.length;
+      
+      if (imageCount <= 6) {
+        gallery.classList.add('few-images');
+      }
+      // 6tadan ko'p bo'lsa oddiy masonry layout
     });
 
     function openModal(index) {
