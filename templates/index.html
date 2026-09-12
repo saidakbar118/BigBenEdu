@@ -1,0 +1,1157 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        
+        <title>Big Ben education HUB | for Hurulbayev Sarvar</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon'%}'" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
+    </head>
+    <style>
+        /* 🔹 Modal orqa fonni oynasimon blur qilish */
+        .modal-backdrop.show {
+          background-color: rgba(255, 255, 255, 0.5) !important; /* shaffof oq fon */
+          backdrop-filter: blur(30px) !important; /* oynasimon blur effekt */
+          -webkit-backdrop-filter: blur(30px) !important;
+        }
+        
+        /* 🔹 Modal o‘zi silliq chiqsin */
+        .modal.fade .modal-dialog {
+          transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+          transform: scale(0.9);
+          opacity: 0;
+        }
+        .modal.fade.show .modal-dialog {
+          transform: scale(1);
+          opacity: 1;
+        }
+        
+        /* 🔹 Modal tarkibining orqa fonini o‘chirish */
+        .modal-content {
+          background: transparent;
+          border: none;
+          box-shadow: none;
+        }
+        
+        /* 🔹 Rasmning ko‘rinishi */
+        .modal-img-small {
+          max-width: 80%;
+          height: auto;
+          border-radius: 12px;
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+        }
+        </style>
+         
+    <body id="page-top">
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#page-top">
+        <img style="width: 55px; height:55px" src="{% static 'assets/img/bigbenlogo.png'%}" alt="..." />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars ms-1"></i>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#services">{% trans "BIZ HAQIMIZDA" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">{% trans "YO'NALISHLARIMIZ" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">{% trans "HIKOYAMIZ" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">{% trans "BIZNING JAMOA" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="#market">{% trans "MA'LUMOT" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="/album/">{% trans "FOTOALBOM" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">{% trans "Aloqa" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">{% trans "SHOP" %}</a></li>
+        </ul>
+  
+        <!-- 🔥 Til almashtirgich -->
+        <form action="{% url 'set_language' %}" method="post" class="d-flex ms-lg-3">
+            {% csrf_token %}
+            <select name="language" class="language-select" onchange="this.form.submit()">
+              <option value="" disabled selected hidden>Language</option>
+              <option value="ru">ru</option>
+              <option value="en">en</option>
+            </select>
+          </form>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 🔥 CSS -->
+  <style>
+    /* Navbar ichidagi select tugma */
+    .language-select {
+      background-color: #ff9900;   /* Orange */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      min-width: 80px;
+    }
+  
+    .language-select:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(255, 152, 0, 0.8);
+    }
+  
+    .language-select option {
+      background-color: #ffaf01;
+      color: #ffffff;
+    }
+  </style>
+  
+        <!-- Masthead-->
+       <!-- Banner Section -->
+<section class="banner">
+    <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+  
+        <div class="carousel-item active">
+          <header class="masthead banner1">
+            <div class="container text-center">
+              <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
+            </div>
+          </header>
+        </div>
+  
+        <div class="carousel-item">
+          <header class="masthead banner2">
+            <div class="container text-center">
+              <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
+            </div>
+          </header>
+        </div>
+  
+        <div class="carousel-item">
+          <header class="masthead banner4">
+            <div class="container text-center">
+              <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
+            </div>
+          </header>
+        </div>
+  
+        <div class="carousel-item">
+          <header class="masthead banner6">
+            <div class="container text-center">
+              <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
+            </div>
+          </header>
+        </div>
+  
+        <div class="carousel-item">
+          <header class="masthead banner7">
+            <div class="container text-center">
+              <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
+            </div>
+          </header>
+        </div>
+  
+
+  
+        <div class="carousel-item">
+          <header class="masthead banner9">
+            <div class="container text-center">
+              <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
+            </div>
+          </header>
+        </div>
+  
+        <div class="carousel-item">
+          <header class="masthead banner10">
+            <div class="container text-center">
+              <a class="btn btn-primary btn-xl text-uppercase" href="#services">{% trans "BATAFSIL" %}</a>
+            </div>
+          </header>
+        </div>
+  
+      </div>
+  
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+  
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">{% trans "BIZ HAQIMIZDA" %}
+                    </h2>
+                    <h3 class="section-subheading text-muted">{% trans "Ta’lim // Mas’uliyat // Mustaqil fikr" %}</h3>
+                </div>
+                <div class="row text-center">
+                    <!-- English Section -->
+                    <div class="col-md-4">
+                        <img src="https://flagcdn.com/w320/gb.png" alt="English" class="rounded-circle mb-3" width="100" height="100">
+                        <h4 class="my-3">{{about.name}}</h4>
+                        <p class="text-muted">
+                            {{about.text}}
+                        </p>
+                    </div>
+                
+                    <!-- Russian Section -->
+                    <div class="col-md-4">
+                        <img src="https://flagcdn.com/w320/ru.png" alt="Russian" class="rounded-circle mb-3" width="100" height="100">
+                        <h4 class="my-3">{{about.name1}}</h4>
+                        <p class="text-muted-rus">
+                            {{about.text1}}
+                        </p>
+                    </div>
+                
+                    <!-- Uzbek Section -->
+                    <div class="col-md-4">
+                        <img src="https://flagcdn.com/w320/uz.png" alt="Uzbek" class="rounded-circle mb-3" width="100" height="100">
+                        <h4 class="my-3">{{about.name2}}</h4>
+                        <p class="text-muted">
+                            {{about.text2}}
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="portfolio">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-heading text-uppercase">{% trans "YO'NALISHLAR" %}</h2>
+                    <h3 class="section-subheading text-muted">{% trans "Yo'nalishlar bilan tanishib chiqing" %}</h3>
+                </div>
+                <div class="row">
+                    <!-- Portfolio item 1 -->
+                    <div class="col-lg-3 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                                <img class="img-fluid" src="{{images.image1.url}}" alt="Hurulbayev Sarvar" />
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- Portfolio item 2 -->
+                    <div class="col-lg-3 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                                <img class="img-fluid" src="{{images.image2.url}}" alt="Zuhra" />
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- Portfolio item 3 -->
+                    <div class="col-lg-3 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                                <img class="img-fluid" src="{{images.image3.url}}" alt="Gulruhsora" />
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- Portfolio item 4 -->
+                    <div class="col-lg-3 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                                <img class="img-fluid" src="{{images.image4.url}}" alt="Kamolxon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- Modallar -->
+                <!-- Modal 1 -->
+                <div class="modal fade" id="portfolioModal1" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content border-0 bg-transparent">
+                            <div class="modal-body p-0 text-center">
+                                <img class="img-fluid modal-img-small" src="{{images.image1.url}}" alt="Hurulbayev Sarvar">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Modal 2 -->
+                <div class="modal fade" id="portfolioModal2" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content border-0 bg-transparent">
+                            <div class="modal-body p-0 text-center">
+                                <img class="img-fluid modal-img-small" src="{{images.image2.url}}" alt="Zuhra">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Modal 3 -->
+                <div class="modal fade" id="portfolioModal3" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content border-0 bg-transparent">
+                            <div class="modal-body p-0 text-center">
+                                <img class="img-fluid modal-img-small" src="{{images.image3.url}}" alt="Gulruhsora">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Modal 4 -->
+                <div class="modal fade" id="portfolioModal4" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content border-0 bg-transparent">
+                            <div class="modal-body p-0 text-center">
+                                <img class="img-fluid modal-img-small" src="{{images.image4.url}}" alt="Kamolxon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+
+        
+                <!-- Modal CSS -->
+                <style>
+                    .modal.fade .modal-dialog {
+                        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+                        transform: scale(0.9);
+                        opacity: 0;
+                    }
+                    .modal.fade.show .modal-dialog {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                    .modal-content {
+                        background: transparent;
+                        border: none;
+                        box-shadow: none;
+                    }
+                    .modal-img-small {
+                        max-width: 80%;
+                        height: auto;
+                        border-radius: 8px;
+                        
+                    }
+                </style>
+            </div>
+        </section>
+        
+        
+        
+        <!-- About-->
+        <section class="page-section" id="about">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">{% trans "HIKOYAMIZ" %}</h2>
+                    <h3 class="section-subheading text-muted">{% trans "Biz haqimizda ko'proq bilib oling." %}</h3>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{text.image.url}}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading">{{text.name}}</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted-about">{{text.text}}</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{text.image1.url}}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading">{{text.name1}}</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted-about">{{text.text1}}</p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{text.image2.url}}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading">{{text.name2}}</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted-about">{{text.text2}}</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{text.image3.url}}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading">{{text.name3}}</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted-about">{{text.text3}}</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4>
+                                {% trans "Be Part" %}
+                                <br />
+                                {% trans "Of Our" %}
+                                <br />
+                                {% trans "Story!" %}
+                            </h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Team-->
+        <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">{% trans "Big Ben team family" %}
+                    </h2>
+                    <h3 class="section-subheading text-muted">{% trans "Bizning jamoa - Bizning oila." %}</h3>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-lg-12 text-center">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/sarvar.jpg'%}" alt="..." />
+                            <h4>{% trans "Hurulbaev Sarvar" %}</h4>
+                            <p class="text-muted">{% trans "Head Teacher, Language Instructor" %}</p>
+                            <a class="btn btn-dark btn-social mx-2" href="https://t.me/s_hurulbaev"><i class="fab fa-telegram"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/share/164MtvofUo/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/sarvarhurulbaev"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/2.jpg'%}" alt="..." />
+                            <h4>{% trans "Zuhra" %}</h4>
+                            <p class="text-muted">{% trans "English language instructor" %}</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-telegram"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/Akbarova.jpg'%}" alt="..." />
+                            <h4>{% trans "Akbarova" %}</h4>
+                            <p class="text-muted">{% trans "English language instructor" %}</p>
+                            <a class="btn btn-dark btn-social mx-2" href="https://t.me/h_akbarova"><i class="fab fa-telegram"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/xadija-akbarova-a9080a346"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/ganijonova.jpg'%}" alt="..." />
+                            <h4>{% trans "G'anijonova" %}</h4>
+                            <p class="text-muted">{% trans "English language instructor" %}</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-telegram"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <!--0000000000000000000-->
+            </div>
+        </section>
+        <!-- Clients-->
+        <section class="page-section bg-light" id="market">
+            <div class="container">
+              <div class="text-center">
+                <h2 class="section-heading text-uppercase">{% trans "MA'LUMOT" %}</h2>
+                <h3 class="section-subheading text-muted">{% trans "Biz haqimizda yana biroz" %}</h3>
+              </div>
+              <div class="row">
+          
+                <!-- Item 1 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+                  <div class="market-item">
+                    <img src="{% static 'assets/img/team/01.png'%}" 
+                         alt="..." 
+                         class="rounded-circle market-img" 
+                         data-bs-toggle="modal" 
+                         data-bs-target="#marketModal1" />
+                    <h5 class="mt-2">{% trans "The Story of Sava Hurulbaev" %}</h5>
+                  </div>
+                </div>
+          
+                <!-- Item 2 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+                  <div class="market-item">
+                    <img src="{% static 'assets/img/team/06.png'%}" 
+                         alt="..." 
+                         class="rounded-circle market-img" 
+                         data-bs-toggle="modal" 
+                         data-bs-target="#marketModal2" />
+                    <h5 class="mt-2">{% trans "I See Myself as a Social Entrepreneur" %}</h5>
+                  </div>
+                </div>
+          
+                <!-- Item 3 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+                  <div class="market-item">
+                    <img src="{% static 'assets/img/team/07.png'%}" 
+                         alt="..." 
+                         class="rounded-circle market-img" 
+                         data-bs-toggle="modal" 
+                         data-bs-target="#marketModal3" />
+                    <h5 class="mt-2">{% trans "Laying the Foundations: Big Ben Education Hub" %}</h5>
+                  </div>
+                </div>
+          
+                <!-- Item 4 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+                  <div class="market-item">
+                    <img src="{% static 'assets/img/team/03.png'%}" 
+                         alt="..." 
+                         class="rounded-circle market-img" 
+                         data-bs-toggle="modal" 
+                         data-bs-target="#marketModal4" />
+                    <h5 class="mt-2">{% trans "Scaling Impact: EU Project in Fergana Valley" %}</h5>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+                    <div class="market-item">
+                      <img src="{% static 'assets/img/team/04.png'%}" 
+                           alt="..." 
+                           class="rounded-circle market-img" 
+                           data-bs-toggle="modal" 
+                           data-bs-target="#marketModal5" />
+                      <h5 class="mt-2">{% trans "Learning and Bringing Back: From Andijan to Austin" %}</h5>
+                    </div>
+                </div>
+            
+                  <!-- Item 2 -->
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+                    <div class="market-item">
+                      <img src="{% static 'assets/img/team/02.png'%}" 
+                           alt="..." 
+                           class="rounded-circle market-img" 
+                           data-bs-toggle="modal" 
+                           data-bs-target="#marketModal6" />
+                      <h5 class="mt-2">{% trans "Chevening Scholar: From London to Local Action" %}</h5>
+                    </div>
+                </div>
+            
+                  <!-- Item 3 -->
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+                    <div class="market-item">
+                      <img src="{% static 'assets/img/team/05.png'%}" 
+                           alt="..." 
+                           class="rounded-circle market-img" 
+                           data-bs-toggle="modal" 
+                           data-bs-target="#marketModal7" />
+                      <h5 class="mt-2">{% trans "Andijan Business Leaders Program: Multiplying Change" %}</h5>
+                    </div>
+                </div>
+            
+                  <!-- Item 4 -->
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+                    <div class="market-item">
+                      <img src="{% static 'assets/img/team/08.png'%}" 
+                           alt="..." 
+                           class="rounded-circle market-img" 
+                           data-bs-toggle="modal" 
+                           data-bs-target="#marketModal8" />
+                      <h5 class="mt-2">{% trans "My Philosophy: Change Takes Steps" %}</h5>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+          </section>
+          
+          <!-- ================= MODALS ================= -->
+          
+          <!-- Modal 1 -->
+          <div class="modal fade" id="marketModal1" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content p-4">
+                <h4 class="text-center">{% trans "The Story of Sava Hurulbaev" %}</h4>
+                <p class="long-text">
+                    {% blocktrans %}
+                    A Social Entrepreneur Bridging Global Experience with Local Change
+                    {% endblocktrans %}
+                </p>
+                <div class="text-center">
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal 2 -->
+          <div class="modal fade" id="marketModal2" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content p-4">
+                <h4 class="text-center">{% trans "I See Myself as a Social Entrepreneur" %}</h4>
+                <p class="long-text">
+                    {% blocktrans %}
+                    My mission has always been to fill the gaps my community faces day to day — gaps in education, in
+                    leadership, in opportunity. Where some see problems, I see possibilities. Entrepreneurs are best
+                    positioned to solve community challenges because they are trained to recognize problems not as
+                    obstacles, but as opportunities for innovation. Once equipped with the right knowledge and global
+                    perspective, they can bring the world back into their communities — inspiring, motivating, and
+                    driving real change.
+                    {% endblocktrans %}
+                </p>
+                <div class="text-center">
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal 3 -->
+          <div class="modal fade" id="marketModal3" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content p-4">
+                <h4 class="text-center">{% trans "Laying the Foundations: Big Ben Education Hub" %}</h4>
+                <p class="long-text">
+                    {% blocktrans %}
+                    In 2020, I established Big Ben Education Hub with a bold vision: to give young people access to
+                    quality education and the confidence to participate in shaping their futures. Despite the challenges
+                    of the time, within the very first year we welcomed over 400 students. This success demonstrated
+                    not only the demand for such a space, but also the power of education as a springboard for
+                    transformation.
+                    {% endblocktrans %}
+                </p class="long-text">
+                <div class="text-center">
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal 4 -->
+          <div class="modal fade" id="marketModal4" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content p-4">
+                <h4 class="text-center">{% trans "Scaling Impact: EU Project in Fergana Valley "%}</h4>
+                <p class="long-text">
+                    {% blocktrans %}
+                    Soon after, I was invited to serve as Project Manager for one of the largest EU-funded initiatives in
+                    Uzbekistan’s Fergana Valley. With a budget of €329,000, my role was to design and deliver 12
+                    youth-led mini-projects across Andijan, Asaka, and seven neighborhoods. For two years, I worked
+                    closely with young leaders, training them to engage in local decision-making and ensuring their
+                    voices were heard. Watching these young people grow into active changemakers convinced me
+                    that empowered communities are built by empowered individuals.
+                    {% endblocktrans %}
+                </p>
+                <div class="text-center">
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="marketModal5" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content p-4">
+                <h4 class="text-center">{% trans "Learning and Bringing Back: From Andijan to Austin" %}</h4>
+                <p class="long-text">
+                    {% blocktrans %}
+                    In 2022, I was selected for the Uzbekistan Business Leaders (UBL) Program, funded by the
+                    American Councils. Out of 300 applicants, I was chosen as one of the finalists. This fellowship took
+                    me to Austin, Texas, where I immersed myself in entrepreneurial sessions at the University of
+                    Texas. I saw firsthand how American entrepreneurs innovate, collaborate, and solve problems at
+                    scale. Upon returning, I launched the Andijan Business Club, gathering over 60 entrepreneurs.
+                    Together with local universities, we created a platform where business leaders shared real-life
+                    cases with students, while identifying and nurturing new talent. This became a powerful bridge
+                    between education and entrepreneurship.
+                    {% endblocktrans %}
+                </p>
+                <div class="text-center">
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal 2 -->
+          <div class="modal fade" id="marketModal6" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content p-4">
+                <h4 class="text-center">{% trans "Chevening Scholar: From London to Local Action" %}</h4>
+                <p class="long-text">
+                    {% blocktrans %}
+                    In 2023, I was awarded the Chevening Scholarship — one of the most prestigious UK Government
+                    awards. Only 1–2% of all applicants worldwide succeed, and I was honored to be among them.
+                    Through Chevening, I completed my Master’s in Entrepreneurship, Innovation, and Enterprise
+                    Development in London (2023–2024). But my ambition was never just to study — I wanted to act.
+                    Returning to Uzbekistan, I opened the second branch of Big Ben Education Hub, which became
+                    more than a learning center. It is now a hybrid ecosystem: - A coworking space for entrepreneurs 
+                    A training hub for English teachers to grow skills and income - A networking zone for students and
+                    business leaders to connect, collaborate, and create opportunities together This reflects my
+                    philosophy: education and entrepreneurship together are the engines of social change.
+                    {% endblocktrans %}
+                </p>
+                <div class="text-center">
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal 3 -->
+          <div class="modal fade" id="marketModal7" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content p-4">
+                <h4 class="text-center"> {% trans "Andijan Business Leaders Program: Multiplying Change" %}</h4>
+                <p class="long-text">
+                    {% blocktrans %}
+                    Inspired by my U.S. experience, I launched the Andijan Business Leaders Program. Unlike
+                    programs that target students alone, this initiative empowers young entrepreneurs who each
+                    employ 40+ people across industries such as pharmaceuticals, textiles, IT, hospitality, education,
+                    furniture, and real estate. - In 2024 and 2025, I led 20 entrepreneurs on 10-day leadership journeys
+                    in London. These were not just trips — they were accelerators. Participants returned with global
+                    best practices, stronger networks, and fresh strategies to apply in their businesses and
+                    communities. - In 2026, I will take 10 outstanding entrepreneurs to the United States, connecting
+                    Andijan’s leaders with global markets and networks. This multiplies their ability to improve
+                    industries, generate jobs, and solve pressing community challenges.
+                    {% endblocktrans %}
+                </p class="long-text">
+                <div class="text-center">
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal 4 -->
+          <div class="modal fade" id="marketModal8" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content p-4">
+                <h4 class="text-center">{% trans "My Philosophy: Change Takes Steps" %}</h4>
+                <p class="long-text">
+                    {% blocktrans %}
+                    Real change does not happen overnight. It requires influence, impact, and persistence. 1. Influence
+                    minds with education and exposure. 2. Affect systems through leadership and collaboration. 3.
+                    Create impact that transforms communities and industries. Every project I lead — in education,
+                    entrepreneurship, or leadership development — follows this process. By educating and
+                    empowering entrepreneurs, I am building the capacity of those who can solve the most pressing
+                    challenges our communities face. I believe the future of Andijan, and Uzbekistan as a whole, lies in
+                    its entrepreneurs — educated, globally aware, and locally committed. They are the ones who will
+                    see every problem as an opportunity and transform challenges into stepping stones toward
+                    progress.
+                    {% endblocktrans %}
+                </p>
+                <div class="text-center">
+                  <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">{% trans "Yopish" %}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+<!-- Contact -->
+
+<!-- Contact -->
+
+<section class="page-section" id="contact">
+    <div class="container">
+
+        <!-- SECTION TITLE -->
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">
+                {% trans "Biz bilan bog'laning" %}
+            </h2>
+
+            <h3 class="section-subheading text-muted">
+                {% trans "Aloqaga chiqing va BigBen a'zosiga aylaning" %}
+            </h3>
+        </div>
+
+
+        <!-- SUCCESS MESSAGE -->
+        {% if messages %}
+            {% for message in messages %}
+
+                <div class="row justify-content-center mb-4">
+                    <div class="col-lg-8">
+
+                        <div
+                            class="alert alert-success alert-dismissible fade show text-center"
+                            role="alert"
+                        >
+
+                            <strong>
+                                {{ message }}
+                            </strong>
+
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="alert"
+                                aria-label="Close"
+                            ></button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            {% endfor %}
+        {% endif %}
+
+
+        <!-- CONTACT FORM -->
+        <form
+            method="POST"
+            action="{% url 'index' %}"
+            id="contactForm"
+        >
+
+            {% csrf_token %}
+
+
+            <div class="row align-items-stretch mb-5">
+
+                <!-- LEFT SIDE -->
+                <div class="col-md-6">
+
+                    <!-- NAME -->
+                    <div class="form-group mb-4">
+
+                        {{ contact_form.name }}
+
+                        {% if contact_form.name.errors %}
+                            <div class="text-danger mt-2">
+                                {{ contact_form.name.errors }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+                    <div class="form-group mb-4">
+
+                        {{ contact_form.email }}
+
+                        {% if contact_form.email.errors %}
+                            <div class="text-danger mt-2">
+                                {{ contact_form.email.errors }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- PHONE -->
+                    <div class="form-group">
+
+                        {{ contact_form.phone }}
+
+                        {% if contact_form.phone.errors %}
+                            <div class="text-danger mt-2">
+                                {{ contact_form.phone.errors }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE -->
+                <div class="col-md-6">
+
+                    <!-- MESSAGE -->
+                    <div class="form-group form-group-textarea">
+
+                        {{ contact_form.message }}
+
+                        {% if contact_form.message.errors %}
+                            <div class="text-danger mt-2">
+                                {{ contact_form.message.errors }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- GENERAL FORM ERRORS -->
+            {% if contact_form.non_field_errors %}
+
+                <div class="alert alert-danger">
+
+                    {{ contact_form.non_field_errors }}
+
+                </div>
+
+            {% endif %}
+
+
+            <!-- SUBMIT BUTTON -->
+            <div class="text-center">
+
+                <button
+                    class="btn btn-primary btn-xl text-uppercase"
+                    id="submitButton"
+                    type="submit"
+                >
+
+                    <i class="fas fa-paper-plane me-2"></i>
+
+                    {% trans "Jo'natish" %}
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+</section>
+
+
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">NanoSoft &copy; 2025</div>
+                
+                </div>
+            </div>
+        </footer>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio item 1 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'assets/img/close-icon.svg'%}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="{% static 'assets/img/portfolio/1.jpg'%}" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Threads
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Illustration
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 2 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'assets/img/close-icon.svg'%}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="{% static 'assets/img/portfolio/2.jpg'%}" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Explore
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Graphic Design
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 3 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'assets/img/close-icon.svg'%}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="{% static 'assets/img/portfolio/3.jpg'%}" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Finish
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Identity
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 4 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'assets/img/close-icon.svg'%}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="{% static 'assets/img/portfolio/4.jpg'%}" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Lines
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Branding
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 5 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'assets/img/close-icon.svg'%}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="{% static 'assets/img/portfolio/5.jpg'%}" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Southwest
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Website Design
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 6 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'assets/img/close-icon.svg'%}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="{% static 'assets/img/portfolio/6.jpg'%}" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Window
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Photography
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/scripts.js'%}"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    </body>
+</html>
